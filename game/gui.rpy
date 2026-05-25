@@ -62,19 +62,19 @@ define gui.interface_text_color = '#ffffff'
 ## Fontes e tamanhos de fonte ##################################################
 
 ## A fonte usada para o texto do jogo.
-define gui.text_font = "DejaVuSans.ttf"
+define gui.text_font = "fonts/Literata-Regular.ttf"
 
 ## A fonte usada para os nomes dos caracteres.
-define gui.name_text_font = "DejaVuSans.ttf"
+define gui.name_text_font = "fonts/Literata-Bold.ttf"
 
 ## A fonte usada para o texto fora do jogo.
-define gui.interface_text_font = "DejaVuSans.ttf"
+define gui.interface_text_font = "fonts/Literata-Regular.ttf"
 
 ## O tamanho do texto normal do diálogo.
-define gui.text_size = 33
+define gui.text_size = 27
 
 ## O tamanho dos nomes dos caracteres.
-define gui.name_text_size = 45
+define gui.name_text_size = 36
 
 ## O tamanho do texto na interface de usuário do jogo.
 define gui.interface_text_size = 33
@@ -112,8 +112,8 @@ define gui.textbox_yalign = 1.0
 ## O posicionamento do nome do personagem que fala, em relação à caixa de texto.
 ## Pode ser um número inteiro de pixels a partir da esquerda ou do topo, ou 0,5
 ## para o centro.
-define gui.name_xpos = 360
-define gui.name_ypos = 0
+define gui.name_xpos = 395
+define gui.name_ypos = -30
 
 ## O alinhamento horizontal do nome do personagem. Pode ser 0,0 para alinhado à
 ## esquerda, 0,5 para centralizado e 1,0 para alinhado à direita.
@@ -219,8 +219,8 @@ define gui.choice_button_borders = Borders(150, 8, 150, 8)
 define gui.choice_button_text_font = gui.text_font
 define gui.choice_button_text_size = gui.text_size
 define gui.choice_button_text_xalign = 0.5
-define gui.choice_button_text_idle_color = '#888888'
-define gui.choice_button_text_hover_color = "#ffffff"
+define gui.choice_button_text_idle_color = '#FFFFFF'
+define gui.choice_button_text_hover_color = "#000000"
 define gui.choice_button_text_insensitive_color = '#8888887f'
 
 

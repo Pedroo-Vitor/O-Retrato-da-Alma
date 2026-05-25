@@ -1,12 +1,11 @@
 ﻿#Capítulo 1 - O Retrato
 
-define dorian = Character("Dorian Gray")
-define basil = Character("Basil Hallward")
-define henry = Character("Henry Wotton")
+define dorian = Character("Dorian Gray", color="#E8D845")
+define basil = Character("Basil Hallward", color="#E8D845")
+define henry = Character("Henry Wotton", color="#E8D845")
 
 # Variável que armazena a decisões ruins.
-default decisoesRuins = ""
-
+default escolhasRuins = ""
 
 # O jogo inicia aqui.
 label capitulo_1:
