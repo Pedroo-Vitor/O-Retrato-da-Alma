@@ -241,4 +241,5 @@ label capitulo_1:
 
     # Fim do capítulo 1.
 
-    return
+    # Carrega o script do capítulo 2.
+    jump capitulo_2
