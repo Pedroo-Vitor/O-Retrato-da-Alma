@@ -65,9 +65,11 @@ label capitulo_1:
 
     #Parte 1 - Henry e Basil conversando sobre o quadro
 
-    scene bg jardim
+    scene capitulo1-transicao with fade
+    pause
+    scene casa-basil-frente-1 with Dissolve(2.0)
 
-    "O intenso perfume de rosas impregenava o ar. A leve brisa espalhava o aroma do lilás."
+    "O intenso perfume de rosas impregnava o ar. A leve brisa espalhava o aroma do lilás."
 
     henry "Esta é sua melhor obra, Basil. O Melhor Trabalho da sua vida."
     
@@ -75,13 +77,17 @@ label capitulo_1:
 
     "As belas sombras dos pássaros movimentavam-se sobre as longas cortinas de seda indiana, que estavam penduradas nas imensas janelas."
 
-    show basil-neutro at right with dissolve
-    show henry-neutro at left, position_right with dissolve
+    scene henry-basil-olhando-quadro with fade
     
     henry "É maravilhoso. Você deve expor a obra na galeria Grosvenor no ano que vem."
+
+    scene casa-basil-interior with fade
+    show basil-neutro at right with dissolve
     
     basil "Não desejo expor a obra, Henry. Não vou enviá-la para nenhuma galeria."
     basil "Coloquei muito de mim aí. Há parte da minha vida ilustrada neste quadro."
+
+    show henry-neutro at left, position_right with dissolve
     
     henry "Não diga bobagem, Basil."
     
@@ -90,21 +96,29 @@ label capitulo_1:
     
     henry "Tem que me apresentá-lo."
     
-    basil "Não precisa mais esperar, Henry, ele está logo alí."
+    basil "Não precisa mais esperar, Henry, ele está logo alí, olhe pela janela!"
 
     #Parte 2 - Dorian entra na casa de Basil, conhece Henry e posa para o quadro.
-    
+
+    scene dorian-entrando-casa-basil with fade
+    pause
+    scene casa-basil-interior with fade
     hide henry-neutro with dissolve
+    hide basil-neutro with dissolve
     show dorian-neutro at left, position_left with dissolve
     
     dorian "Bom dia, Basil. Perdoe-me, não sabia que tinha companhia. Quem é?"
+
+    show basil-neutro at right with dissolve
     
     basil "Bom dia, Dorian. Este é o Lorde Henry Wotton, Dorian, um velho amigo."
+
+    hide basil-neutro with dissolve
+    show henry-neutro at right, position_left with dissolve
     
     dorian "Olá, Henry. Já me falaram muito sobre o senhor… E suas vítimas…"
     dorian "O senhor é de fato uma má influência, Senhor Henry?"
 
-    hide basil-neutro with dissolve
     show henry-neutro at right, position_left with dissolve
     
     henry "Hmm... Influenciar as pessoas é dar-lhes uma alma, senhor Gray. Seus pecados são emprestados, o medo governa as pessoas. Assim como a sociedade a moral, Deus."
@@ -113,26 +127,33 @@ label capitulo_1:
     
     dorian "O senhor me desconcerta. Nem sei o que dizer. Preciso pensar…"
 
-    hide henry-neutro with dissolve
-    show basil-neutro at right with dissolve
+    #hide henry-neutro with dissolve
+    show basil-neutro at center with dissolve
     
     basil "Desculpa interromper a conversa de vocês, acredito que o estava ótimo, mas… Dorian, já que está aqui, podes terminar de posar para a minha obra? É rapidinho, faltam só alguns detalhes, eu juro."
     
     dorian "Sim, claro, leve o tempo que quiser, Basil."
+
+    hide basil-neutro with dissolve
+    hide dorian-neutro with dissolve
+    hide henry-neutro with dissolve
+
+    scene dorian-posando with fade
+    pause
     
     basil "Consegui dar-lhe uma expressão maravilhosa. Pode descansar, Dorian. Só preciso completar o fundo. Aproveite para terminar aquele papo com Henry."
 
     dorian "Vai ser um prazer."
-
-    show henry-neutro at center, position_right with dissolve
     
     henry "Sim, vai ser um prazer."
 
     #Parte 3 - Dorian e Henry conversando sobre a juventude, a beleza e o tempo enquanto caminha pelo jardim.
 
-    hide henry-neutro with dissolve
-    hide dorian-neutro with dissolve
-    hide basil-neutro with dissolve
+    scene dorian-henry-caminhando-jardim with fade
+    pause
+
+    scene jardim-basil with fade
+
     show dorian-neutro at left, position_left with dissolve
     show henry-neutro at right, position_left with dissolve
     
@@ -160,13 +181,22 @@ label capitulo_1:
 
     dorian "Eeee… Não estou nervoso, Senhor Henry, só um pouco… Pensativo… Hmmm..."
 
+    basil "HEY!"
+
+    dorian "Hã!? Olhe, é Basil chamando."
+
     hide henry-neutro with dissolve
     hide dorian-neutro with dissolve
 
     #Parte 4 - Dorian, Henry e Basil vendo o quadro terminado e Dorian fazendo um pedido.
 
-    basil "HEY! HENRY! DORIAN! TERMINEI! VENHAM VER O RETRATO!" 
-    
+    scene basil-chamando-henry-dorian with fade
+
+    basil "HEY! HENRY! DORIAN! TERMINEI! VENHAM VER O RETRATO!"
+
+    scene retrato-dorian with fade
+    pause
+
     basil "Quando secar, enviarei para sua casa, Dorian."
     
     henry "É incrivelmente bonito."
@@ -184,5 +214,31 @@ label capitulo_1:
     dorian "Até a minha alma!"
 
     #Parte 5 - Dorian guardando o retrato no porão.
+
+    scene dorian-retornando-casa with fade
+
+    dorian "Ufa, finalmente em casa. Foi uma longa caminhada até aqui."
+
+    scene dorian-olhando-retrato with fade
+
+    dorian "Basil realmente se superou nesta pintura. Pena que não há espaço para pendurá-lo."
+    dorian "..."
+    dorian "Hããã! Só estou enganando a mim mesmo, tem espaço de sobra para pendurá-lo. Eu só… Eu só não quero ficar olhando para meu auto retrato e saber que um dia não serei mais assim…"
+    dorian "Maldito Lorde Henry, aquela conversa que tivemos no jardim vai maturar na minha cabeça durante semanas."
+    dorian "O que eu vou fazer? Hmmm… Já sei! Vou pendurá-lo no sótão, aí não preciso vê-lo todo santo dia."
+
+    scene dorian-sotao with fade
+
+    dorian "Cof, cof, cof. Aqui está bem empoeirado, tenho que contratar uma faxina. Enfim, isso não importa agora. Aquele é o local ideal para o quadro."
+
+    scene retrato-sotao with fade
+
+    dorian "Se eu deixar o quadro à mostra, ele irá estragar com o tempo com toda essa poeira. Hmmm… Preciso cobri-lo com um pano."
+
+    scene retrato-sotao-coberto with fade
+
+    dorian "Perfeito! Espero que Basil não fique chateado por ter feito isto com sua obra. Quando esse pensamento bobo sobre juventude sair da minha mente, penduro ele em um local de respeito. Mas até lá, ele ficará aí!"
+
+    # Fim do capítulo 1.
 
     return
