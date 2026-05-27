@@ -53,6 +53,7 @@ transform position_left:
 transform position_right:
     xzoom -1.0
 
+# Personagens
 define dorian = Character("Dorian Gray", color="#E8D845", callback=dorian_bounce)
 define basil = Character("Basil Hallward", color="#C0C839", callback=basil_bounce)
 define henry = Character("Henry Wotton", color="#ED6101", callback=henry_bounce)
