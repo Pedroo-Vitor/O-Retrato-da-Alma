@@ -1,0 +1,150 @@
+```renpy
+# Parte 5 - Encontro no Jardim próximo à igreja de Saint Mark.
+
+    gladys "Confesso que fiquei surpresa com o seu convite, senhor Gray. A maioria dos homens que frequenta a casa de meu pai prefere conversar com Lorde Henry ou tentar provar a Alan Campbell que também sabe ser inteligente."
+
+    gladys "É curioso. Todos parecem chegar à nossa casa com alguma pose preparada. Alguns querem parecer profundos, outros querem parecer cruéis, outros desejam apenas ser admirados."
+
+    gladys "O senhor, no entanto, parecia diferente. Não porque estivesse livre de pose, claro. Ninguém está. Mas porque parecia cansado dela."
+
+    dorian "Talvez eu estivesse."
+
+    gladys "É por isso que gosto deste lugar. Ele não tenta impressionar ninguém. Não há velas caras, nem talheres de prata, nem pessoas rindo de frases que não entenderam apenas para parecerem educadas."
+
+    gladys "Em Londres, não tentar impressionar já é quase uma forma de coragem. Muitos salões são bonitos, mas fazem algo triste com as pessoas. Elas entram desejando ser admiradas e saem acreditando que admiração é o mesmo que afeto."
+
+    gladys "Mas não é. Ser admirado é fácil quando se é belo, rico ou espirituoso. Ser amado exige algo menos confortável: ser verdadeiro quando ninguém está aplaudindo."
+
+    dorian "A senhorita acredita que eu não sou verdadeiro?"
+
+    gladys "Ainda não sei. Às vezes, o senhor parece sincero. Outras vezes, parece repetir ideias que aprendeu com Lorde Henry, como se elas fossem um casaco elegante demais para ser retirado."
+
+    gladys "Não digo isso para ofendê-lo. Meu pai faz isso quando deseja se proteger. Lorde Henry faz isso porque se diverte. O senhor parece fazer porque ainda não decidiu que tipo de homem deseja ser."
+
+    gladys "E isso, curiosamente, não me desagrada. Homens completamente perdidos raramente hesitam. Eles discursam. O senhor ainda hesita."
+
+    dorian "Então minha confusão é uma virtude?"
+
+    gladys "Talvez seja uma chance. Uma pessoa confusa ainda pode escolher. Uma pessoa convencida demais já se entregou a alguma mentira e passou a chamá-la de filosofia."
+
+    gladys "Meu pai acredita que sentimentos são fraquezas com nomes bonitos. Lorde Henry acredita que sentimentos são brinquedos para pessoas inteligentes se divertirem. Eu não penso assim."
+
+    gladys "Acredito que sentimentos revelam aquilo que tentamos esconder. Vaidade, medo, ternura, culpa... Tudo aparece quando alguém deixa de representar."
+
+    dorian "Quero ser alguém melhor do que pareço ser."
+
+    gladys "Então comece não fugindo quando a conversa deixar de ser agradável. É fácil ser encantador quando todos sorriem para nós. Difícil é continuar honesto quando alguém nos mostra algo que não queremos ver."
+
+    gladys "Também não confie demais em promessas bonitas. Promessas costumam ser feitas para impressionar o ouvido. Tentativas aparecem nos atos, nos pequenos gestos, na forma como alguém trata aquilo que não lhe traz vantagem."
+
+    gladys "Meu pai despreza esse tipo de pensamento. Ele diria que estou sendo sentimental. Lorde Henry talvez dissesse que estou tentando salvá-lo de si mesmo. Nenhum dos dois estaria completamente certo."
+
+    gladys "Eu apenas acredito que o senhor ainda pode escolher melhor do que eles esperam."
+
+    dorian "Tentarei."
+
+    gladys "Isso é melhor do que uma promessa. Uma promessa pode ser dita em um segundo e esquecida no outro. Uma tentativa precisa ser repetida, mesmo quando ninguém está observando."
+
+    gladys "Por isso lhe pergunto, senhor Gray: você vai continuar visitando a nossa casa?"
+
+    dorian "Acredito que sim. Há algo na sua presença que torna aquela casa menos severa."
+
+    gladys "Essa é uma resposta mais cuidadosa do que eu esperava. Fico feliz por isso."
+
+    gladys "Se continuar indo, verá muitas coisas. Verá meu pai tentando transformar qualquer sentimento em tese. Verá Lorde Henry rindo de tudo aquilo que as pessoas comuns chamam de sagrado. Verá minha mãe, Elizabeth Campbell, tentando manter a paz com uma elegância que nenhum deles merece."
+
+    gladys "E talvez me veja também. Mas, se for por mim, não vá como quem procura uma nova distração. Não quero ser apenas uma bela presença colocada no caminho de um homem entediado."
+
+    gladys "Vá porque deseja conhecer melhor aquilo que ainda não entende. Vá porque, por algum motivo, a casa dos Campbell lhe pareceu importante. Vá porque talvez exista ali algo além de ironia, ciência e vaidade."
+
+    dorian "Eu irei."
+
+    gladys "Então venha com cuidado. A casa dos Campbell parece cheia de luz, mas também possui sombras. Meu pai chama essas sombras de inteligência. Lorde Henry chama de prazer."
+
+    gladys "Eu prefiro chamá-las pelo nome certo: tentações."
+
+    gladys "E antes que o senhor pense o contrário, eu não sou uma tentação, senhor Gray. Sou apenas alguém que prefere a verdade, mesmo quando ela é menos elegante."
+
+    dorian "Lembrarei disso."
+
+    gladys "Espero que sim."
+
+    narrador "\"Naquela noite, não houve grandes declarações. Dorian apenas caminhou ao lado de Gladys e ouviu. Pela primeira vez em muito tempo, não sentiu necessidade de transformar o silêncio em pose.\""
+
+    narrador "\"Depois disso, Dorian continuou frequentando a casa da família Campbell durante dois meses. Dizia a si mesmo que voltava pelos jantares, pelas conversas e pela companhia de Lorde Henry, mas sabia que a presença de Gladys tornava cada visita mais difícil de recusar.\""
+
+
+# Parte 7 - Dorian e Basil se reencontrando depois de três meses, quando Basil retorna de Paris.
+
+    basil "Dorian!"
+
+    dorian "Basil!"
+
+    basil "Três meses em Paris, e ainda assim parece que fiquei ausente por anos. Londres muda pouco, mas as pessoas... As pessoas às vezes mudam muito depressa."
+
+    basil "Venha cá, deixe-me olhá-lo. Não como pintor, não desta vez. Como amigo."
+
+    basil "Quando parti, confesso que tive medo. Medo de que Henry ocupasse todos os espaços que deixei vazios. Medo de voltar e encontrar em você apenas frases bonitas, orgulho e aquela juventude terrível que acredita poder justificar tudo."
+
+    basil "Talvez isso pareça exagero, mas você me conhece. Sou dado a preocupações. Ainda assim, algumas preocupações são apenas formas mais ansiosas de carinho."
+
+    dorian "Muita coisa aconteceu enquanto esteve fora."
+
+    basil "Percebo. Há algo diferente em você. Não direi que está salvo, pois homens não são quadros restaurados em uma tarde. Mas há menos inquietação nos seus olhos."
+
+    basil "Antes, eu temia que você começasse a confundir beleza com permissão. Agora vejo ao menos algum esforço. E esforço, quando é sincero, vale mais do que muitas virtudes exibidas em salões."
+
+    basil "Então me diga, Dorian. O que aconteceu nesses três meses?"
+
+    dorian "Vou me casar, Basil."
+
+    basil "Casar?"
+
+    basil "Meu Deus... Dorian Gray, casado. Paris realmente me manteve longe de capítulos importantes."
+
+    basil "Com quem?"
+
+    dorian "Com Gladys Campbell."
+
+    basil "Gladys Campbell... A filha de Alan Campbell?"
+
+    basil "Alan Campbell como sogro. Isso é quase uma penitência filosófica."
+
+    basil "Mas, se essa jovem fez você olhar para a vida com mais cuidado, então já devo gratidão a ela antes mesmo de conhecê-la."
+
+    basil "Só peço que entenda uma coisa, Dorian. Uma mulher não existe para decorar a vida de um homem. Ela não é um retrato, nem uma música agradável, nem uma resposta para inquietações passageiras."
+
+    basil "Ela possui a própria alma, a própria vontade, os próprios medos. Se for amá-la, ame-a como pessoa, não como símbolo de uma nova fase."
+
+    dorian "Eu entendo."
+
+    basil "Espero que sim. E espero que continue entendendo mesmo quando for difícil. O amor não é feito apenas de encanto. Também é feito de paciência, renúncia e atenção. Palavras que Henry provavelmente chamaria de tediosas."
+
+    basil "Mas há coisas tediosas que salvam uma vida, Dorian. Cuidado, constância, honestidade... Tudo aquilo que não brilha muito nos salões, mas sustenta uma casa quando as luzes se apagam."
+
+    dorian "Você está orgulhoso de mim?"
+
+    basil "Estou orgulhoso do caminho que parece estar tentando seguir. Não da perfeição, porque perfeição em seres humanos costuma ser apenas vaidade bem iluminada."
+
+    basil "Estou orgulhoso do esforço. E quero acreditar que esse esforço é verdadeiro."
+
+    basil "Mas também continuarei preocupado. Sempre continuarei. É meu defeito mais fiel."
+
+    dorian "E se um dia eu decepcionar você?"
+
+    basil "Então ficarei triste. Talvez furioso. Talvez faça um sermão longo, insuportável e completamente necessário."
+
+    basil "Mas independente de quem você se torne, Dorian, eu sempre serei seu amigo."
+
+    dorian "Obrigado, Basil."
+
+    basil "Agora sente-se e conte tudo. Quero saber como a família Campbell entrou na sua vida, como Gladys entrou no seu coração e, principalmente, como você teve a ousadia de tomar uma decisão tão importante sem minha permissão artística."
+
+    dorian "Permissão artística?"
+
+    basil "Naturalmente. Eu pintei seu retrato. Tenho direitos morais sobre sua aparência em cerimônias importantes."
+
+    dorian "Hahaha! Está bem, Basil. A história começa na casa da família Campbell."
+
+    narrador "\"E, pela primeira vez em muitos meses, a casa de Dorian Gray pareceu menos silenciosa. Lá fora, Londres seguia fria e indiferente. Mas dentro daquela sala havia amizade, memória e a pequena esperança de que nem toda beleza precisasse terminar em ruína.\""
+```

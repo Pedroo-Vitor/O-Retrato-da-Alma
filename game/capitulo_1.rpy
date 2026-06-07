@@ -214,7 +214,7 @@ label capitulo_1:
     dorian "Se fosse contrário… Se eu pudesse me manter jovem para sempre, e o retrato envelhecesse! Eu daria… Daria qualquer coisa por isso…"
     dorian "Até a minha alma!"
 
-    #Parte 5 - Dorian guardando o retrato no porão.
+    #Parte 5 - Dorian guardando o retrato no sótão.
 
     scene dorian-retornando-casa with fade
 

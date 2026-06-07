@@ -289,4 +289,4 @@ label capitulo_2:
 
     sibyl "Não! Não! Não me deixe!"
 
-    return
+    jump capitulo_3_termino
