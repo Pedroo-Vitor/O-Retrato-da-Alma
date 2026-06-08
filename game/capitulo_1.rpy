@@ -65,7 +65,7 @@ default escolhasRuins = ""
 # O jogo inicia aqui.
 label capitulo_1:
 
-    #Parte 1 - Henry e Basil conversando sobre o quadro
+    #Parte 1 (Introdução) - Henry e Basil conversando sobre o quadro
 
     scene capitulo1-transicao with fade
     pause
@@ -79,7 +79,7 @@ label capitulo_1:
 
     "As belas sombras dos pássaros movimentavam-se sobre as longas cortinas de seda indiana, que estavam penduradas nas imensas janelas."
 
-    scene henry-basil-olhando-quadro with fade
+    scene henry-basil-olhando-quadro with dissolve
     
     henry "É maravilhoso. Você deve expor a obra na galeria Grosvenor no ano que vem."
 
@@ -126,7 +126,6 @@ label capitulo_1:
     henry "Místico?"
 
     basil "Eu não sei como explicar, mas…Toda vez que Dorian posa para mim, é como se uma força fora de mim mesmo estivesse guiando a minha própria mão. É como se o quadro tivesse vida própria, independente de mim. É por isso que não vou expô-lo. Pertence por direito a Dorian Gray, e eu devo dar a ele."
-
     henry "Quero conhecer esse jovem extraordinário. Creio que seremos amigos. Sempre escolho os amigos pela boa aparência e os inimigos pelo bom intelecto. Um homem não pode ser zeloso demais na escolha de inimigos"
 
     basil "Henry, desprezo seus princípios, mas me agrada a maneira como os expressas. Além disso, não quero que conheça Dorian Gray e eu vou fazer o possível para isso se tornar realidade. Prometo a mim mesmo."
@@ -135,20 +134,24 @@ label capitulo_1:
 
     basil "Você sabe muito bem, Henry. Você sabe muito bem..."
 
+    scene henry-basil-ouvindo-batidas-na-porta with dissolve
+    pause(0.8)
+
     naoRevelado "Basil, abre a porta."
 
     henry "Hahaha! Parece que essa promessa não durou muito tempo."
 
     basil "Droga."
 
+    scene dorian-batendo-na-porta-de-basil with dissolve
+    pause(0.8)
+
     dorian "Basil, vem abrir a porta, sou eu, Dorian!"
 
-    dorian "Já vai! Já vai!"
+    basil "Já vai! Já vai!"
 
-    #Parte 2 - Dorian entra na casa de Basil, conhece Henry e posa para o quadro.
+    # Parte 2 - Dorian entra na casa de Basil, conhece Henry e posa para o quadro.
 
-    scene dorian-entrando-casa-basil with fade
-    pause
     scene casa-basil-interior with fade
     hide henry-neutro with dissolve
     hide basil-neutro with dissolve
@@ -163,21 +166,61 @@ label capitulo_1:
     hide basil-neutro with dissolve
     show henry-neutro at right, position_left with dissolve
     
-    dorian "Olá, Lorde Henry."
+    menu:
+        "*Cumprimentar com educação*":
+            dorian "Olá, Lorde Henry."
+
+            henry "Um prazer, senhor Gray. Basil realmente foi modesto ao descrevê-lo."
+
+        "Espero não estar interrompendo.":
+            dorian "Olá, Lorde Henry. Espero não estar interrompendo."
+
+            henry "Pelo contrário. Interrupções belas quase sempre melhoram uma manhã."
 
     henry "Vejo que Basil realmente transmitiu a beleza de sua aparência naquele quadro de forma precisa. Pena que não será assim para sempre, não é mesmo, senhor Dorian Gray."
 
-    dorian "Nossa… Humm… Que coisa estranha para se dizer a alguém que acabou de conhecer…"
+    menu:
+        "*Estranhar o comentário.*":
+            dorian "Nossa… Humm… Que coisa estranha para se dizer a alguém que acabou de conhecer…"
+
+            henry "As coisas estranhas costumam ser as únicas que merecem ser ditas."
+
+        "Responder sem saber o que dizer.":
+            dorian "Eu… Não sei como responder a isso."
+
+            henry "Excelente. As melhores conversas começam quando alguém perde a resposta."
+
+        "*Tentar não parecer afetado*":
+            dorian "O senhor fala de um modo curioso."
+
+            henry "Curioso é apenas o nome educado que damos ao perigoso quando ele nos diverte."
+
+    show basil-neutro at center, position_right with dissolve
 
     basil "Henry, eu quero terminar esse quadro hoje. Será que seria grosseria minha pedir para ir embora?"
 
     henry "Devo ir, Senhor Gray?"
 
-    dorian "Fique, não vejo problema nenhum."
+    menu:
+        "*Pedir que Henry fique.*":
+            dorian "Fique, não vejo problema nenhum."
+
+            henry "Muito gentil de sua parte."
+
+        "*Deixar Basil decidir.*":
+            dorian "Não quero atrapalhar o trabalho de Basil."
+
+            show basil-neutro at center, position_left with dissolve
+            basil "Você não atrapalha, Dorian. Henry é quem costuma fazer isso."
+
+            henry "E sempre com grande elegância."
 
     henry "Não vai se incomodar. Vai, Basil? Gosta que seus modelos conversem com alguém."
 
-    basil "Então fique a vontade. Dorian, vá ao seu lugar e não dê nenhuma atenção que o Lorde Henry diz. Ele exerce má influência sobre seus amigos, sendo eu a única exceção."
+    show basil-neutro at center, position_right with dissolve
+    basil "Então fique a vontade."
+    show basil-neutro at center, position_left with dissolve 
+    basil "Dorian, vá ao seu lugar e não dê nenhuma atenção que o Lorde Henry diz. Ele exerce má influência sobre seus amigos, sendo eu a única exceção."
 
     hide basil-neutro with dissolve
     hide dorian-neutro with dissolve
@@ -190,9 +233,12 @@ label capitulo_1:
 
     henry "Enquanto Basil termina o seu retrato, vamos dar um passeio pelo jardim para nos conhecer melhor. Que tal, Senhor Gray?"
 
-    dorian "Vai ser um prazer."
-    
-    henry "Sim, vai ser um prazer."
+    menu:
+        "*Aceitar com educação*":
+            dorian "Sim. Gostaria de conversar melhor com o senhor."
+
+        "*Aceitar ainda inseguro*":
+            dorian "Bem… Se Basil não se importar, eu aceito."
 
     basil "Quando eu terminar eu chamo vocês. Ah… E lembre-se, Dorian: Henry é má influência, não siga os seus conselhos!"
 
@@ -201,41 +247,95 @@ label capitulo_1:
     scene dorian-henry-caminhando-jardim with fade
     pause
 
-    scene jardim-basil with fade
+    scene jardim-basil with dissolve
 
     show dorian-neutro at left, position_left with dissolve
-    show henry-neutro at right, position_left with dissolve
 
-    dorian "O Senhor realmente exerce má influência, Lorde Henry?"
+    menu:
+        "O senhor realmente exerce má influência?":
+            dorian "O senhor realmente exerce má influência, Lorde Henry?"
+
+        "Basil fala como se o senhor fosse perigoso":
+            dorian "Basil fala como se o senhor fosse perigoso. Pensei que vocês fossem amigos."
+
+            henry "E nos somos amigos, mas, basil, sabe que eu tenho um incrível poder de persuasão. Meus conselhos são influentes."
+
+    show henry-neutro at right, position_left with dissolve
 
     henry "Uma coisa que não existe é uma boa influência, Senhor Gray. Toda influência é imoral."
 
-    dorian "Porquê?"
+    dorian "Por quê?"
 
     henry "Porque o objetivo da vida é autodesenvolvimento, perceber perfeitamente sua natureza. É por isso que estamos aqui. Um homem deve viver sua vida total e completamente, dar forma a cada sentimento, expressão a cada pensamento, realidade a cada sonho."
     henry "Cada impulso que reprimimos remoi na mente e nos envenena. Só há uma maneira de se livrar de uma tentação é cedendo a ela. Resistir? A alma fica doente. Não há algo que possa curar a alma se não os sentidos, como nada há que possa curar os sentidos se não a alma."
 
-    dorian "O senhor me desconcerta. Nem sei o que dizer. Preciso pensar…"
-    
+    menu:
+
+        "*Discordar*":
+            dorian "Discordo, mas suas palavras me deixam inquieto."
+
+            henry "A inquietação é um excelente começo, Senhor Gray."
+
+        "*Concordar*":
+            dorian "É estranho, mas... De certa forma é verdade..."
+
+            henry "Naturalmente. As ideias perigosas costumam ser as únicas realmente interessantes e verdadeiras."
+
+        "*Refletir*":
+            dorian "O senhor me desconcerta. Nem sei o que dizer. Preciso pensar…"
+
     henry "Vamos nos sentar à sombra. Se o senhor ficar mais tempo sob o sol, perderá essa bela cor e isso seria uma pena. O senhor possui uma fantástica juventude, e a juventude é o que temos de melhor."
-    
-    dorian "Não sinto isso. Isso não é verdade."
-    
-    henry "Hmm… Quando for velho, feio e cheio de rugas, e tiver a testa cheia de dobras o senhor saberá. Agora, possui o mundo em suas mãos. A beleza é um dos grandes dons da natureza, como a luz é do sol."
+
+    menu:
+        "*Negar a importância da juventude*":
+            dorian "Não sinto isso. Isso não é verdade."
+
+        "*Concordar a importância da juventude*":
+            dorian "Talvez o senhor tenha razão. Nunca pensei na juventude como algo tão precioso."
+            henry "É natural. Os jovens raramente percebem o valor da juventude enquanto a possuem. É como respirar: só se entende sua importância quando começa a faltar."
+
+        "*Perguntar sobre a juventude*":
+            dorian "O senhor fala da juventude como se fosse uma espécie de poder."
+
+            henry "E é, meu caro Dorian. O poder mais delicado e mais breve de todos."
+
+    henry "Quando for velho, feio e cheio de rugas, e tiver a testa cheia de dobras o senhor saberá. Agora, possui o mundo em suas mãos. A beleza é um dos grandes dons da natureza, como a luz é do sol."
     henry "Quando sua juventude acabar, a beleza vai desaparecer, e vai descobrir que já não tem nenhum triunfo. O tempo tem inveja do senhor."
-    
-    dorian "O senhor está me deixando nervoso e ansioso. O tempo é algo completamente normal a todo ser, não há o que temer."
-    
-    henry "O TEMPO NÃO É ATERRORIZANTE?! Hã… Vou dar um conselho ao senhor:"
-    henry "Desfrute! Desfrute plenamente da juventude enquanto a possui. Não malgaste seus dias tentando redimir os fracassados que não têm esperança, muito menos desperdiçando sua vida com pessoas medíocres."
+
+    menu:
+        "O tempo é algo completamente normal.":
+            dorian "O tempo é algo completamente normal a todo ser. Todos envelhecem. Talvez não haja razão para ter medo disso."
+
+            henry "Essa é uma frase muito confortável. Infelizmente, conforto raramente é verdade."
+
+        "Um dia tudo isso pode desaparecer.":
+            dorian "É estranho imaginar que um dia tudo isso pode desaparecer."
+
+            henry "Não é estranho, Dorian. É trágico."
+
+    henry "Vou dar um conselho ao senhor: Desfrute! Desfrute plenamente da juventude enquanto a possui. Não malgaste seus dias tentando redimir os fracassados que não têm esperança, muito menos desperdiçando sua vida com pessoas medíocres."
     henry "Viva! Viva esta vida maravilhosa que pertence ao senhor. Busque novas sensações. O mundo lhe pertence!"
     henry "Entendeu o conselho, Dorian?"
-    
-    dorian "Eeee... Sim..."
 
-    henry "Hahaha! Não fique nervoso jovem. Olhe, siga o meu conselho, você não se arrependerá!"
+    menu:
+        "Sim, mas discordo":
+            dorian "Sim, entendi. Mas não sei se concordo. Uma vida guiada apenas por prazeres me parece perigosa."
 
-    dorian "Eeee… Não estou nervoso, Senhor Henry, só um pouco… Pensativo… Hmmm..."
+            henry "Perigosa? Sem dúvida. Mas as coisas seguras raramente transformam alguém."
+            henry "Ainda assim, gosto da sua resistência. Ela tornará sua queda, caso aconteça, muito mais interessante."
+
+
+        "Sim, e concordo":
+            dorian "Sim. Talvez o senhor tenha razão. Talvez eu deva aproveitar mais a vida enquanto ainda posso."
+
+            henry "Excelente, Dorian. Essa é a primeira resposta verdadeiramente jovem que ouvi de você."
+            henry "A juventude só se torna trágica quando é desperdiçada tentando parecer prudente."
+
+
+        "Preciso refletir mais":
+            dorian "Entendi o que o senhor quis dizer, mas preciso refletir mais. Suas palavras me deixaram inquieto."
+
+            henry "A inquietação é um ótimo começo."
 
     basil "HEY!"
 
@@ -274,7 +374,7 @@ label capitulo_1:
 
     henry "Adoro prazeres simples, são os últimos refúgios do complexo."
 
-    #Parte 5 - Dorian guardando o retrato no sótão de sua casa.
+    #Parte 5 (Final) - Dorian guardando o retrato no sótão de sua casa.
 
     scene dorian-retornando-casa with fade
 

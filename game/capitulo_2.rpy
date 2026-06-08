@@ -607,6 +607,7 @@ label final_sibyl_termino:
 
     sibyl "Não! Não! Não me deixe!"
 
+    # Carrega o script do capítulo 3 em que Siby Vane e Dorian terminam.
     jump capitulo_3_termino
 
 label final_sibyl_juntos:
@@ -641,4 +642,5 @@ label final_sibyl_juntos:
     scene black with fade
     pause
 
+    # Carrega o script do capítulo 3 em que Siby Vane e Dorian continuam juntos.
     jump capitulo_3_juntos
