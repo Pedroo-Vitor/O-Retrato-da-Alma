@@ -563,7 +563,6 @@ label capitulo_3_termino:
     gladys "Estou orgulhosa, senhor Gray."
 
     # Parte 7 - Dorian e Basil se reencontrando depois de três meses, quando Basil retorna de Paris.
-
     basil "Dorian!"
 
     dorian "Basil!"

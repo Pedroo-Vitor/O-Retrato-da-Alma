@@ -57,6 +57,7 @@ transform position_right:
 define dorian = Character("Dorian Gray", color="#E8D845", callback=dorian_bounce)
 define basil = Character("Basil Hallward", color="#C0C839", callback=basil_bounce)
 define henry = Character("Henry Wotton", color="#ED6101", callback=henry_bounce)
+define naoRevelado = Character("???", color="#FFFFFF")
 
 # Variável que armazena a decisões ruins.
 default escolhasRuins = ""
@@ -74,7 +75,7 @@ label capitulo_1:
 
     henry "Esta é sua melhor obra, Basil. O Melhor Trabalho da sua vida."
     
-    basil "Ainda faltam alguns detalhes, Hery. Assim que Dorian Gray voltar a posar, poderei terminá-lo."
+    basil "Ainda faltam alguns detalhes, Henry. Assim que o modelo voltar a posar, poderei terminá-lo."
 
     "As belas sombras dos pássaros movimentavam-se sobre as longas cortinas de seda indiana, que estavam penduradas nas imensas janelas."
 
@@ -85,19 +86,64 @@ label capitulo_1:
     scene casa-basil-interior with fade
     show basil-neutro at right with dissolve
     
-    basil "Não desejo expor a obra, Henry. Não vou enviá-la para nenhuma galeria."
-    basil "Coloquei muito de mim aí. Há parte da minha vida ilustrada neste quadro."
+    basil "Não desejo expor a obra, Henry. Não vou enviá-la para nenhuma galeria. oloquei muito de mim aí. Há parte da minha vida ilustrada neste quadro."
 
     show henry-neutro at left, position_right with dissolve
     
-    henry "Não diga bobagem, Basil."
+    henry "Hahaha!"
     
-    basil "Você não entende. Quando conheci o modelo deste quadro senti que tinha diante de mim alguém que iria absorver toda a minha existência, minha arte, minha alma."
-    basil "Por favor, não tire de mim aquele que dá à minha arte todo o encanto que ela possui."
+    basil "Sabia que ia rir, mas da mesma forma é verdade. Por favor, não tire de mim aquele que dá à minha arte todo o encanto que ela possui."
     
-    henry "Tem que me apresentá-lo."
+    henry "Sem dúvida não há qualquer semelhança entre você e o jovem Adônis.Você tem uma expressão intelectual, e o intelecto destroi a beleza de qualquer rosto. Não fique lisonjeado, Basil, mas você não é nada igual a ele."
     
-    basil "Não precisa mais esperar, Henry, ele está logo alí, olhe pela janela!"
+    basil "É lógico que não sou igual a ele, e fico satisfeito."
+
+    henry "Sempre teve uma paixão por virtude, Basil. Por que sua alegria de não ser como ele?"
+
+    basil "Sofremos pelo o que os deuses nos dão. E creio que, Dorian Gray, pagará por sua beleza."
+
+    henry "Dorian Gray. Então esse é o nome do modelo de sua obra."
+
+    basil "..."
+    basil "É… Não tinha a intenção de te contar."
+
+    henry "Porque não pretendia me dizer o nome dele?"
+
+    basil "Eu não vou explicar. Quanto mais velho fico, mais gosto de mistérios. Deve parecer tolice para você."
+
+    henry "Não me parece tolice nenhuma. Esquece que eu sou casado e que o encanto do casamento é o que torna uma vida de decepção absolutamente necessária para ambas as partes."
+
+    basil " Eu acredito que seja realmente um bom marido, Henry, mas é totalmente envergonhado de suas próprias virtudes. Seu cinismo é simplesmente podre."
+
+    henry "Ser natural é só afetação e a posse mais irritante que conheço. Mas ainda não respondeu a minha pergunta, quero saber o motivo de não exibir o retrato de Dorian Gray."
+
+    basil "Há realmente muito pouco a contar, Henry. Além do mais, dificilmente acreditará."
+
+    henry "Acredito em qualquer coisa, portanto que seja bem incrível."
+
+    basil "Eu acho que é o que parece. Há alguma coisa em que… Que não consigo entender… Qualquer coisa de místico…"
+
+    henry "Místico?"
+
+    basil "Eu não sei como explicar, mas…Toda vez que Dorian posa para mim, é como se uma força fora de mim mesmo estivesse guiando a minha própria mão. É como se o quadro tivesse vida própria, independente de mim. É por isso que não vou expô-lo. Pertence por direito a Dorian Gray, e eu devo dar a ele."
+
+    henry "Quero conhecer esse jovem extraordinário. Creio que seremos amigos. Sempre escolho os amigos pela boa aparência e os inimigos pelo bom intelecto. Um homem não pode ser zeloso demais na escolha de inimigos"
+
+    basil "Henry, desprezo seus princípios, mas me agrada a maneira como os expressas. Além disso, não quero que conheça Dorian Gray e eu vou fazer o possível para isso se tornar realidade. Prometo a mim mesmo."
+
+    henry "E porque?"
+
+    basil "Você sabe muito bem, Henry. Você sabe muito bem..."
+
+    naoRevelado "Basil, abre a porta."
+
+    henry "Hahaha! Parece que essa promessa não durou muito tempo."
+
+    basil "Droga."
+
+    dorian "Basil, vem abrir a porta, sou eu, Dorian!"
+
+    dorian "Já vai! Já vai!"
 
     #Parte 2 - Dorian entra na casa de Basil, conhece Henry e posa para o quadro.
 
@@ -117,23 +163,21 @@ label capitulo_1:
     hide basil-neutro with dissolve
     show henry-neutro at right, position_left with dissolve
     
-    dorian "Olá, Henry. Já me falaram muito sobre o senhor… E suas vítimas…"
-    dorian "O senhor é de fato uma má influência, Senhor Henry?"
+    dorian "Olá, Lorde Henry."
 
-    show henry-neutro at right, position_left with dissolve
-    
-    henry "Hmm... Influenciar as pessoas é dar-lhes uma alma, senhor Gray. Seus pecados são emprestados, o medo governa as pessoas. Assim como a sociedade a moral, Deus."
-    henry "Para não sermos vistos como selvagens, vivemos na auto-negação. E isso deforma nossa vida."
-    henry "O senhor, no entanto, que se encontra na flor da idade, teve paixões que o assustaram, além de sonhos e desejos que o deixam cheio de vergonha."
-    
-    dorian "O senhor me desconcerta. Nem sei o que dizer. Preciso pensar…"
+    henry "Vejo que Basil realmente transmitiu a beleza de sua aparência naquele quadro de forma precisa. Pena que não será assim para sempre, não é mesmo, senhor Dorian Gray."
 
-    #hide henry-neutro with dissolve
-    show basil-neutro at center with dissolve
-    
-    basil "Desculpa interromper a conversa de vocês, acredito que o estava ótimo, mas… Dorian, já que está aqui, podes terminar de posar para a minha obra? É rapidinho, faltam só alguns detalhes, eu juro."
-    
-    dorian "Sim, claro, leve o tempo que quiser, Basil."
+    dorian "Nossa… Humm… Que coisa estranha para se dizer a alguém que acabou de conhecer…"
+
+    basil "Henry, eu quero terminar esse quadro hoje. Será que seria grosseria minha pedir para ir embora?"
+
+    henry "Devo ir, Senhor Gray?"
+
+    dorian "Fique, não vejo problema nenhum."
+
+    henry "Não vai se incomodar. Vai, Basil? Gosta que seus modelos conversem com alguém."
+
+    basil "Então fique a vontade. Dorian, vá ao seu lugar e não dê nenhuma atenção que o Lorde Henry diz. Ele exerce má influência sobre seus amigos, sendo eu a única exceção."
 
     hide basil-neutro with dissolve
     hide dorian-neutro with dissolve
@@ -142,11 +186,15 @@ label capitulo_1:
     scene dorian-posando with fade
     pause
     
-    basil "Consegui dar-lhe uma expressão maravilhosa. Pode descansar, Dorian. Só preciso completar o fundo. Aproveite para terminar aquele papo com Henry."
+    basil "Consegui dar-lhe uma expressão maravilhosa. Pode descansar, Dorian. Só preciso completar o fundo."
+
+    henry "Enquanto Basil termina o seu retrato, vamos dar um passeio pelo jardim para nos conhecer melhor. Que tal, Senhor Gray?"
 
     dorian "Vai ser um prazer."
     
     henry "Sim, vai ser um prazer."
+
+    basil "Quando eu terminar eu chamo vocês. Ah… E lembre-se, Dorian: Henry é má influência, não siga os seus conselhos!"
 
     #Parte 3 - Dorian e Henry conversando sobre a juventude, a beleza e o tempo enquanto caminha pelo jardim.
 
@@ -157,6 +205,17 @@ label capitulo_1:
 
     show dorian-neutro at left, position_left with dissolve
     show henry-neutro at right, position_left with dissolve
+
+    dorian "O Senhor realmente exerce má influência, Lorde Henry?"
+
+    henry "Uma coisa que não existe é uma boa influência, Senhor Gray. Toda influência é imoral."
+
+    dorian "Porquê?"
+
+    henry "Porque o objetivo da vida é autodesenvolvimento, perceber perfeitamente sua natureza. É por isso que estamos aqui. Um homem deve viver sua vida total e completamente, dar forma a cada sentimento, expressão a cada pensamento, realidade a cada sonho."
+    henry "Cada impulso que reprimimos remoi na mente e nos envenena. Só há uma maneira de se livrar de uma tentação é cedendo a ela. Resistir? A alma fica doente. Não há algo que possa curar a alma se não os sentidos, como nada há que possa curar os sentidos se não a alma."
+
+    dorian "O senhor me desconcerta. Nem sei o que dizer. Preciso pensar…"
     
     henry "Vamos nos sentar à sombra. Se o senhor ficar mais tempo sob o sol, perderá essa bela cor e isso seria uma pena. O senhor possui uma fantástica juventude, e a juventude é o que temos de melhor."
     
@@ -170,13 +229,9 @@ label capitulo_1:
     henry "O TEMPO NÃO É ATERRORIZANTE?! Hã… Vou dar um conselho ao senhor:"
     henry "Desfrute! Desfrute plenamente da juventude enquanto a possui. Não malgaste seus dias tentando redimir os fracassados que não têm esperança, muito menos desperdiçando sua vida com pessoas medíocres."
     henry "Viva! Viva esta vida maravilhosa que pertence ao senhor. Busque novas sensações. O mundo lhe pertence!"
-    
-    dorian "Eeee..."
-    
-    henry "Entendeu o conselho, Dorian? Entendeu?"
+    henry "Entendeu o conselho, Dorian?"
     
     dorian "Eeee... Sim..."
-    dorian "..."
 
     henry "Hahaha! Não fique nervoso jovem. Olhe, siga o meu conselho, você não se arrependerá!"
 
@@ -198,9 +253,9 @@ label capitulo_1:
     scene retrato-dorian with fade
     pause
 
-    basil "Quando secar, enviarei para sua casa, Dorian."
+    basil "Quando secar, pode levar para sua casa, Dorian."
     
-    henry "É incrivelmente bonito."
+    henry "É incrivelmente bonito. Ainda acho que deve expô-lo, Basil."
     
     dorian "Hmm…"
     
@@ -214,7 +269,12 @@ label capitulo_1:
     dorian "Se fosse contrário… Se eu pudesse me manter jovem para sempre, e o retrato envelhecesse! Eu daria… Daria qualquer coisa por isso…"
     dorian "Até a minha alma!"
 
-    #Parte 5 - Dorian guardando o retrato no sótão.
+    basil "Agora você entende porque não queria que Dorian conhecesse você, Henry. Olha o que você fez com a cabeça dele em apenas 3 horas."
+    basil "Talvez uma xícara de chá o faça recuperar-se, Dorian. Irá tomar também, não é, Henry? Ou se opõe a esses prazeres simples?"
+
+    henry "Adoro prazeres simples, são os últimos refúgios do complexo."
+
+    #Parte 5 - Dorian guardando o retrato no sótão de sua casa.
 
     scene dorian-retornando-casa with fade
 

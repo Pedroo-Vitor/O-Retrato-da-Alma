@@ -75,6 +75,8 @@ define sibyl = Character("Sibyl Vane", color="#3A5A93", callback=sibyl_bounce)
 # O jogo inicia aqui.
 label capitulo_2:
 
+    # Parte 1 (Intro) - Dorian vai ao teatro e conhece Sibyl Vane.
+
     scene capitulo2-transicao with fade
     pause
     scene dorian-caminhando-cidade with Dissolve(2.0)
@@ -88,7 +90,7 @@ label capitulo_2:
 
     dorian "\"Um teatro! Faz tanto tempo que não vou a um. O show vai começar daqui 30 minutos.\""
     dorian "\"Bem... Já que estou com bastante tempo livre...\""
-    dorian "Um ingresso de camarote para a apresentação de agora!"
+    dorian "Um ingresso para a apresentação de agora!"
 
     scene dorian-assistindo-peca with fade
 
@@ -155,41 +157,251 @@ label capitulo_2:
     pause(0.8)
     scene dorian-e-desconhecido-entra-camarim with fade
 
+    # Parte 2 - Dorian vai ao camarim de Sibyl Vane.
+
     desconhecido "Ei, Sibyl, este jornalista quer entrevista-a, é para um artigo sobre o teatro local."
 
     dorian "Ehhh... Olá!"
 
-    scene sibyl-chocada with fade
+    scene sibyl-chocada with dissolve
     pause(0.8)
-    scene sibyl-feliz with fade
+    scene sibyl-feliz with dissolve
     pause(0.8)
 
     sibyl "Ohh, um jornalista!? Querendo me entrevistar!? Uau, que inesperado. Vai ser um prazer. Por favor, entre!"
 
-    scene cenario-camarim with fade
-    show sibyl-neutra at left with fade
+    scene cenario-camarim with dissolve
+    show sibyl-neutra at right, position_right with dissolve
 
     sibyl "Obrigada por assistir à minha atuação, milorde."
 
-    show dorian-neutro at right, position_right with fade
+    show dorian-neutro at left, position_left with dissolve
 
-    dorian "Não sou milorde, senhorita. Não me chame assim!"
+    menu:
+        "Não sou milorde.":
+            dorian "Não sou milorde, senhorita. Não me chame assim!"
+
+            sibyl "Oh! Então cometi um erro terrível logo em nossa primeira conversa."
+            sibyl "Mas o senhor tem um ar tão nobre que quase me pareceu natural."
+
+        "Apenas Dorian.":
+            dorian "Pode me chamar apenas de Dorian."
+
+            sibyl "Dorian..."
+            sibyl "É um nome bonito. Mas ainda acho simples demais para alguém que apareceu diante de mim como se tivesse saído de uma história."
+
+        "Não precisa ser tão formal.":
+            dorian "Não precisa ser tão formal comigo."
+
+            sibyl "Então também não precisa ser formal comigo."
+            sibyl "No teatro, todos usam nomes, títulos e personagens. É bom falar com alguém sem fingir tanto."
 
     sibyl "Então o chamarei de Príncipe Encantado. É assim que o senhor me parece."
 
-    hide sibyl-neutra with fade
-    hide dorian-neutro with fade
+    menu:
+        "Príncipe Encantado?":
+            dorian "Príncipe Encantado?"
+
+            sibyl "Sim! Não ria de mim. Quando o vi observando do camarote, pensei que talvez fosse alguém importante."
+            sibyl "Depois pensei que talvez fosse apenas alguém gentil. E isso é ainda mais raro."
+
+        "Esse nome é estranho.":
+            dorian "Esse nome é estranho."
+
+            sibyl "Talvez. Mas nomes estranhos combinam com encontros estranhos."
+            sibyl "O senhor apareceu de repente, disse que queria me entrevistar, e agora está aqui no meu camarim. Parece início de peça."
+
+        "E você, quem seria?":
+            dorian "E você, quem seria?"
+
+            sibyl "Eu? Depende da noite."
+            sibyl "Às vezes sou Julieta. Às vezes Imogênia. Às vezes Desdêmona. Mas agora... acho que sou apenas Sibyl."
+
+    sibyl "Gosto quando posso ser apenas Sibyl. No palco, todos esperam que eu seja outra pessoa. Esperam que eu chore na hora certa, ame na hora certa, sofra na hora certa."
+
+    sibyl "Mas quando a cortina fecha, eu volto para este camarim pequeno, para este espelho gasto, para os vestidos que precisam ser costurados outra vez."
+
+    menu:
+        "Você parece amar o palco.":
+            dorian "Você parece amar o palco."
+
+            sibyl "Amo. Mesmo quando ele é pobre, mesmo quando a luz falha, mesmo quando a plateia mal presta atenção."
+            sibyl "Quando estou em cena, tudo parece maior do que a vida comum."
+
+        "É difícil viver assim?":
+            dorian "É difícil viver assim?"
+
+            sibyl "Às vezes. O teatro pertence à minha família, então todos trabalham muito."
+            sibyl "Mas eu não reclamo. Quando atuo bem, sinto que todo o esforço vale alguma coisa."
+
+        "Você muda completamente em cena.":
+            dorian "Você muda completamente em cena."
+
+            sibyl "É o maior elogio que poderia me dar."
+            sibyl "Eu tento desaparecer dentro das personagens. Se a plateia esquece que sou Sibyl, então fiz meu trabalho bem."
+
+    sibyl "Hoje, quando entrei no palco, percebi que o senhor estava prestes a ir embora. Vi seu rosto de tédio antes de eu falar."
+
+    sibyl "Então pensei: preciso fazê-lo ficar."
+
+    menu:
+        "Você conseguiu.":
+            dorian "Você conseguiu."
+
+            sibyl "Fico feliz."
+            sibyl "Não sei por quê, mas queria muito que o senhor continuasse assistindo."
+
+        "Eu não esperava nada.":
+            dorian "Eu não esperava nada daquela peça."
+
+            sibyl "Então foi melhor ainda."
+            sibyl "É bom surpreender alguém que já estava pronto para se decepcionar."
+
+        "Sua voz me fez ficar.":
+            dorian "Sua voz me fez ficar."
+
+            sibyl "Minha voz?"
+            sibyl "Que coisa bonita de ouvir. Sempre achei que minha voz pertencesse mais às personagens do que a mim."
+
+    sibyl "Espero que volte outras vezes, Príncipe Encantado."
+
+    menu:
+        "Voltarei.":
+            dorian "Voltarei."
+
+            sibyl "Então atuarei melhor ainda."
+
+        "Talvez eu volte amanhã.":
+            dorian "Talvez eu volte amanhã."
+
+            sibyl "Talvez?"
+            sibyl "Então farei de tudo para transformar esse talvez em certeza."
+
+        "Não perderia sua próxima apresentação.":
+            dorian "Não perderia sua próxima apresentação."
+
+            sibyl "Agora o senhor está sendo gentil demais."
+            sibyl "Mas confesso que gostei."
+
+    sibyl "Então está combinado. O senhor volta para assistir, e eu finjo não ficar esperando sua presença no camarote."
+
+    dorian "Combinado."
+
+    "Depois daquela noite, Dorian Gray e Sibyl Vane continuaram se encontrando. Ele não faltava a uma única apresentação, e cada nova noite no teatro parecia tornar Sibyl ainda mais extraordinária aos seus olhos."
+
+    # Parte 3 - Dorian fala sobre Sibyl Vane para Henry e Basil e convida eles para assisti-la atuando.
 
     scene casa-basil-interior with fade
     show henry-neutro at left, position_right with dissolve
 
-    henry "Caramba, Dorian, você não para de falar sobre essa tal garota. Você fala como se estivesse apaixonada por ela!"
+    henry "Caramba, Dorian, você não para de falar sobre essa tal garota. Você fala como se estivesse apaixonado por ela!"
 
     show dorian-neutro at right, position_right with dissolve
 
-    dorian "E estou! Henry, Sibyl Vane é sagrada."
+    menu:
+        "Talvez eu esteja.":
+            dorian "Talvez eu esteja."
+
+            henry "Talvez? Meu caro Dorian, quando um jovem bonito diz talvez, geralmente já está perdido."
+            henry "O amor adora entrar disfarçado de dúvida."
+
+        "Ela é diferente.":
+            dorian "Ela é diferente."
+
+            henry "Todos os apaixonados dizem isso. É uma frase muito comum para um sentimento que se imagina extraordinário."
+            henry "Mas continue. Quero saber o que torna essa moça tão incomparável."
+
+        "Você precisa vê-la.":
+            dorian "Você precisa vê-la para entender."
+
+            henry "Ah, então chegamos ao estágio da exibição. Excelente."
+            henry "Quando um homem apaixonado não consegue explicar sua paixão, ele tenta levá-la ao teatro."
+
+    dorian "Sibyl Vane é sagrada."
+
+    henry "Sagrada? Que palavra perigosa para usar sobre uma atriz."
+    henry "Atrizes são criaturas encantadoras justamente porque pertencem a muitas vidas ao mesmo tempo. Hoje amam Romeu, amanhã choram por Otelo, depois morrem em alguma tragédia antiga e retornam para jantar como se nada tivesse acontecido."
+    henry "Mas sagrada? Não sei. A santidade costuma estragar as pessoas. Torna-as muito difíceis de convidar para jantar."
+
+    show basil-neutro at center, position_left with dissolve
+
+    basil "Henry, por favor. Deixe Dorian falar sem transformar cada palavra em veneno."
+
+    show basil-neutro at center, position_right with dissolve
+
+    basil "Dorian, estou feliz por vê-lo entusiasmado, mas também preocupado. Você fala dessa jovem como se ela fosse mais sonho do que pessoa."
+
+    basil "A arte pode nos elevar, sim. Mas quando confundimos uma pessoa com a arte que ela cria, corremos o risco de amar apenas aquilo que inventamos sobre ela."
+
+    menu:
+        "Ela é uma grande artista.":
+            dorian "Ela é uma grande artista."
+
+            basil "Então admire sua arte, Dorian. Apenas não esqueça que, fora do palco, ela também deve ter medos, cansaços e uma vida comum."
+            basil "Ninguém consegue permanecer extraordinário o tempo todo."
+
+        "Ela transforma tudo ao redor.":
+            dorian "Ela transforma tudo ao redor."
+
+            basil "Isso é belo de ouvir."
+            basil "Mas tome cuidado. Às vezes, quando alguém ilumina muito uma sala, esquecemos de olhar para a pessoa segurando a vela."
+
+        "Não é invenção minha.":
+            dorian "Não é invenção minha, Basil. Ela realmente é maravilhosa."
+
+            basil "Acredito em você. Só peço que a veja com olhos humanos também, não apenas com olhos encantados."
+            basil "O encanto é belo, mas pode ser injusto."
+
+    henry "Basil, você consegue transformar até uma paixão juvenil em sermão de domingo."
+
+    show basil-neutro at center, position_left with dissolve
+
+    basil "E você consegue transformar qualquer sermão em piada."
+
+    henry "Naturalmente. É minha forma de caridade."
+
+    henry "Mas confesso que estou curioso, Dorian. Uma jovem capaz de fazê-lo falar como poeta merece ao menos ser observada."
+
+    show basil-neutro at center, position_right with dissolve
+
+    basil "Eu também gostaria de vê-la. Não por curiosidade cruel, como Henry, mas porque quero entender o que tocou tanto o seu espírito."
+
+    menu:
+        "Venham comigo hoje.":
+            dorian "Venham comigo hoje."
+
+            henry "Hoje? Que entusiasmo admirável."
+            henry "Muito bem, aceitarei. Seria uma crueldade deixar Basil sozinho com a própria prudência."
+
+            basil "Eu irei, Dorian. Se ela é importante para você, quero conhecê-la pelo menos através de sua arte."
+
+        "Quero que vejam o que eu vejo.":
+            dorian "Quero que vejam o que eu vejo."
+
+            basil "Então iremos."
+            basil "Mas lembre-se: talvez vejamos algo diferente. Cada pessoa assiste à beleza com os próprios olhos."
+
+            henry "E eu, felizmente, tenho olhos excelentes para esse tipo de desastre encantador."
+
+        "Ela se apresentará esta noite.":
+            dorian "Ela se apresentará esta noite."
+
+            henry "Então está decidido. Iremos ao teatro."
+            henry "Espero que sua deusa saiba sobreviver à nossa plateia particular."
+
+            basil "Henry..."
+
+            henry "Estou sendo gentil, Basil. Para meus padrões, quase angelical."
+
+    dorian "Então está combinado."
+
+    basil "Sim. Iremos com você."
+
+    henry "E espero, Dorian, que essa Sibyl Vane seja metade do que você promete. Caso contrário, sua paixão será melhor que a peça."
 
     scene dorian-henry-basil-caminhando-pelo-teatro with fade
+
+    # Parte 4 - Henry e Basil, junto de Dorian vão ver Sibyl Vane atuando como Julieta, mas acabam se desepicionando.
 
     henry "Hmm... Que lugar estranho para se encontrar uma deusa."
 
@@ -230,11 +442,10 @@ label capitulo_2:
 
     scene henry-dorian-basil-assistindo-sibyl with fade
 
-    basil "... Patético..."
+    basil "Mas..."
+    henry "Basil não completou a fala, mas eu completo: simplesmente patético. Vamos embora!"
 
-    henry "Basil está certo, simplesmente patético. Vamos embora!"
-
-    scene dorian-basil-saindo-do-teatro with fade
+    scene henry-basil-saindo-do-teatro with fade
 
     dorian "NÃO! ESPEREM!"
 
@@ -252,41 +463,182 @@ label capitulo_2:
     pause(0.8)
     scene dorian-entrando-camarim with fade
 
-    sibyl "Oh, meu Príncipe Encantado! Hahaha, como atuei mal esta noite! Hahaha!"
+# Parte 5 (Final) - Dorian vai atrás de Sibyl perdindo explicações.
 
-    scene cenario-camarim with fade
-    show dorian-neutro at right, position_right with fade
+    # Variável de que contabiliza o quanto dorian está copreendendo Sibyl. 
+    # Ela é responsável por alterar o final!
+    $ compreensao_sibyl = 0
 
-    dorian "O que há de engraçado? Foi terrivelmente mal! Foi de espantar! Está doente? Não imagina como sofri."
-    dorian "Você não deveria representar quando está doente. Meus amigos ficaram aborrecidos."
+    scene cenario-camarim with dissolve
+    show dorian-neutro at right, position_right with dissolve
+    show sibyl-neutra at left with dissolve
 
-    show sibyl-neutra at left with fade
+    sibyl "Oh, meu Príncipe Encantado! Hahaha, como atuei na minha última apresentação. Hahaha!"
 
-    sibyl "O porquê de eu ter atuado tão mal; Porque nunca mais voltarei a atuar bem. Você deveria ter compreendido. Mas entendeu agora, certo?"
+    menu:
+        "*Expressar sua decepção*":
+            $ compreensao_sibyl -= 1
+            dorian "O que há de engraçado? Foi terrivelmente mal! Foi de espantar! Não imagina como sofri."
 
-    dorian "Entender o quê, Sibyl?"
+            sibyl "Eu sei que foi ruim. Eu mesma percebi enquanto falava."
+            sibyl "Mas, pela primeira vez, aquilo não me feriu. Parecia que eu finalmente enxergava a mentira do palco."
 
-    sibyl "Príncipe Encantado, antes de você atuar era minha única realidade. Acreditava que tudo o que acontecia no teatro era verdade… Tudo! Mas você, Meu Grande Amor, libertou minha alma. Você me ensinou o que é a realidade."
-    sibyl "Esta noite, pela primeira vez, eu vi o vazio, a mentira: que Romeu não passa de um velho maquiado, que a lua está pintada, e que as palavras não eram minhas. A arte nada mais é do que um reflexo do amor. O amor! Meu amor!"
+        "*Cobrar explicações*":
+            $ compreensao_sibyl += 1
+            dorian "Sibyl, explique com calma. Quero entender o que aconteceu."
 
-    dorian "VOCÊ MATOU O MEU AMOR!"
+            sibyl "Obrigada por perguntar assim."
+            sibyl "Eu temia que viesse apenas para me condenar, sem querer ouvir nada."
 
-    sibyl "O quê? Não está falando sério, não é, Príncipe Encantado? Está apenas atuando…"
+    sibyl "Antes, o palco era minha única realidade. Eu acreditava em tudo: no luar pintado, nos reis de papelão, nas lágrimas falsas e no amor dito por homens maquiados."
+    sibyl "Mas depois que conheci você, tudo aquilo pareceu vazio. Eu vi o teatro como ele era: pobre, cansado, sustentado por aplausos que mal pagavam as contas da minha família."
 
-    scene dorian-gritando-com-sibyl with fade
+    menu:
+        "Então você estavam apenas por dinheiro?!":
+            $ compreensao_sibyl -= 1
+            dorian "Então era isso? Você continuava naquele palco apenas pelo dinheiro?!"
 
-    dorian "Você matou o meu amor! Eu amava você porque era maravilhosa... Porque era um gênio e inteligente, pois tornava real os sonhos de grandes poetas e dava forma e sentido às sombras da arte."
-    dorian "Mas você é superficial e estúpida. Santo Deus! Como fui louco por amá-la. Que idiota eu fui. Nunca mais voltarei a vê-la. NUNCA!"
+            sibyl "Não diga isso. O teatro é pobre, sim, e minha família precisa dele. Mas isso não significa que tudo em mim era interesse."
+            sibyl "Eu amava atuar porque acreditava no que fazia. O problema é que, esta noite, deixei de acreditar."
 
-    scene dorian-terminando-relacionamento-sibyl with fade
+        "Sua família depende de você e do teatro?":
+            $ compreensao_sibyl += 1
+            dorian "Então sua família depende de você e do teatro?"
 
-    sibyl "Não! Não me deixe! Farei o que quiser! Eu o amo mais que tudo no mundo! E…"
+            sibyl "Sim. Mais do que eu gostaria."
+            sibyl "Por isso minha falha desta noite também me assusta. Não decepcionei apenas você. Talvez tenha abalado tudo que sustenta minha casa."
 
-    scene sibyl-ajoelhada-chorando with fade
+    sibyl "Cresci ali dentro. Aprendi a sorrir quando a plateia sorria e a chorar quando esperavam lágrimas."
+    sibyl "Mas esta noite eu não consegui. Não porque quisesse feri-lo. Apenas não consegui transformar mentira em verdade depois de ter conhecido algo real, como você, Pequeno Príncipe."
+
+    menu:
+        "Nunca mais voltará a atuar como antes?":
+            dorian "Então nunca mais voltará a atuar como antes?"
+
+            sibyl "Não sei. Talvez eu volte. Talvez descubra outra forma de atuar."
+            sibyl "Mas não posso prometer que serei a mesma Sibyl que o senhor viu no palco pela primeira vez."
+
+        "Então você realmente mudou.":
+            $ compreensao_sibyl += 1
+            dorian "Talvez eu não tenha entendido que você mudou."
+
+            sibyl "Sim. Eu mudei."
+            sibyl "E talvez eu tenha sido ingênua por pensar que o senhor ficaria feliz com isso."
+
+        "Você abandonou arte por conta de algo passageiro.":
+            $ compreensao_sibyl -= 1
+            dorian "Você abandonou sua arte por causa de um sentimento passageiro."
+
+            sibyl "Não chame assim. Para o senhor pode parecer passageiro, mas para mim foi como acordar de uma vida inteira." 
+            sibyl "Talvez eu esteja errada, mas não consigo fingir que nada mudou."
+
+    sibyl "Antes de você, eu era Julieta, Imogênia, Desdêmona... Todas pareciam mais vivas que eu."
+    sibyl "Agora eu sou Sibyl. Apenas Sibyl. E por isso atuei mal. Porque, pela primeira vez, as palavras dos poetas pareciam pequenas diante do que eu sentia fora do palco."
+
+    menu:
+        "Você fez eu passar vergonha na frente meus amigos.":
+            $ compreensao_sibyl -= 1
+            dorian "Meus amigos estavam lá. Você me fez parecer um tolo diante deles."
+
+            sibyl "Sinto muito por tê-lo envergonhado. Mas eu não estava atuando para Lorde Henry, nem para Basil. Eu esperava que o senhor me visse, mesmo quando todos os outros me julgassem."
+
+        "Amava aquela atriz que transformava sonhos em realidade.":
+            $ compreensao_sibyl -= 1
+            dorian "Eu amava a atriz que transformava sonhos em realidade. Não sei quem está diante de mim agora."
+
+            sibyl "Então talvez o senhor amasse uma personagem."
+            sibyl "Eu não posso ser Julieta para sempre apenas para continuar sendo amada."
+
+        "Talvez eu devesse amar a pessoa por trás da atriz.":
+            $ compreensao_sibyl += 1
+            dorian "Talvez eu tenha amado mais a imagem que criei de você do que você mesma."
+
+            sibyl "Essa é uma coisa triste de ouvir."
+            sibyl "Mas talvez seja a primeira coisa verdadeira dita nesta noite."
+
+    sibyl "Eu continuo sendo eu. Só não consigo mais viver como se o palco fosse minha única verdade."
+    sibyl "Se isso decepciona você, talvez nunca tenha amado Sibyl Vane. Talvez tenha amado apenas as mulheres que eu fingia ser."
+
+    menu:
+
+        "Talvez eu tenha sido injusto.":
+            $ compreensao_sibyl += 1
+            dorian "Talvez eu tenha sido injusto com você."
+
+            sibyl "Talvez nós dois tenhamos sido ingênuos."
+            sibyl "Eu por achar que o amor resolveria tudo. O senhor por achar que eu continuaria sendo uma visão perfeita para sempre."
+            
+        "Você fala como se a culpa fosse minha.":
+            $ compreensao_sibyl -= 1
+            dorian "Você fala como se a culpa fosse minha."
+
+            sibyl "Não quero colocar toda a culpa no senhor."
+            sibyl "Mas também não quero fingir que fui a única a transformar amor em ilusão."
+
+    if compreensao_sibyl >= 2:
+        jump final_sibyl_juntos
+    else:
+        jump final_sibyl_termino
+
+
+label final_sibyl_termino:
+
+    menu:
+        "VOCÊ MATOU O MEU AMOR!":
+            scene dorian-gritando-com-sibyl with dissolve
+            dorian "VOCÊ MATOU O MEU AMOR!"
+
+    sibyl "O quê? Não está falando sério, não é, Príncipe Encantado? Está apenas atuando..."
+
+    dorian "Eu amava você porque era maravilhosa. Porque dava forma e sentido às sombras da arte."
+    dorian "Mas agora vejo apenas uma garota comum, presa a um teatro pobre, rindo da própria ruína."
+
+    scene dorian-terminando-relacionamento-sibyl with dissolve
+
+    dorian "Como fui louco por amá-la. Nunca mais voltarei a vê-la. NUNCA!"
+
+    sibyl "Não! Não me deixe! Farei o que quiser! Eu o amo mais que tudo no mundo!"
+
+    scene sibyl-ajoelhada-chorando with dissolve
     pause(1.1)
-    scene sibyl-deitada-chorando with fade
+
+    scene sibyl-deitada-chorando with dissolve
     pause
 
     sibyl "Não! Não! Não me deixe!"
 
     jump capitulo_3_termino
+
+label final_sibyl_juntos:
+
+    menu:
+        "Talvez eu tenha amado a atriz e não a mulher diante de mim.":
+            scene dorian-e-sibyl-conversando-tranquilamente with dissolve
+            dorian "Talvez eu tenha amado demais a atriz no palco e escutado pouco a mulher diante de mim."
+
+    sibyl "Eu não quero deixar de ser amada por ter sido sincera. Podemos continuar a nos encontrar?"
+
+    dorian "Sim, continuaremos. Amanhã conversaremos com calma. Sobre você, sobre o teatro, sobre sua família... Sem plateia. Sem Meus Amigos. Sem orgulho."
+
+    sibyl "Ótimo. E muito reconfortante ouvir isso!"
+
+    scene dorian-se-despedindo-de-sibyl with dissolve
+
+    dorian "Até amanhã, Sibyl!"
+
+    sibyl "Pequeno Príncipe! Antes de ir, preciso de contar uma coisa..."
+
+    dorian "Hmm... Diga sem medo!"
+
+    sibyl "Eu te amo!"
+
+    menu:
+        "Eu também te amo, Sibyl Vane!":
+            dorian "Eu também te amo, Sibyl Vane!"
+    
+    scene dorian-e-sibyl-se-abracando with dissolve
+    pause
+    scene black with fade
+    pause
+
+    jump capitulo_3_juntos
