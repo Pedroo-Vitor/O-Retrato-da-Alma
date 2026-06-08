@@ -1,78 +1,4 @@
 # Capítulo 2 - O Amor Ideal
-
-# Efeito de bounce para os personagens quando falarem.
-transform bounce:
-    yoffset 0
-    easein .175 yoffset -10
-    easeout .175 yoffset 0
-    repeat 1
-
-# Programação do bounce para os personagens.
-init python:
-
-    def dorian_bounce(event, interact=True, **kwargs):
-
-        if event == "show":
-
-            if renpy.showing("dorian-neutro"):
-
-                renpy.show(
-                    "dorian-neutro",
-                    at_list=[bounce]
-                )
-
-
-    def basil_bounce(event, interact=True, **kwargs):
-
-        if event == "show":
-
-            if renpy.showing("basil-neutro"):
-
-                renpy.show(
-                    "basil-neutro",
-                    at_list=[bounce]
-                )
-
-
-    def henry_bounce(event, interact=True, **kwargs):
-
-        if event == "show":
-
-            if renpy.showing("henry-neutro"):
-
-                renpy.show(
-                    "henry-neutro",
-                    at_list=[bounce]
-                )
-    
-    def sibyl_bounce(event, interact=True, **kwargs):
-
-        if event == "show":
-
-            if renpy.showing("sibyl-neutra"):
-
-                renpy.show(
-                    "sibyl-neutra",
-                    at_list=[bounce]
-                )
-
-# Inverte a posição horizontal para esquerda, para que o personagem olhe para o outro.
-transform position_left:
-    xzoom 1.0
-
-# Inverte a posição horizontal para direita, para que o personagem olhe para o outro.
-transform position_right:
-    xzoom -1.0
-
-# Personagens
-define dorian = Character("Dorian Gray", color="#E8D845", callback=dorian_bounce)
-define basil = Character("Basil Hallward", color="#C0C839", callback=basil_bounce)
-define henry = Character("Henry Wotton", color="#ED6101", callback=henry_bounce)
-define ator = Character("Ator(a)", color="#AAAAAA")
-define desconhecido = Character("Desconhecido", color="#888888")
-define sibyl = Character("Sibyl Vane", color="#3A5A93", callback=sibyl_bounce)
-
-# O jogo inicia aqui.
 label capitulo_2:
 
     # Parte 1 (Intro) - Dorian vai ao teatro e conhece Sibyl Vane.
@@ -401,7 +327,7 @@ label capitulo_2:
 
     scene dorian-henry-basil-caminhando-pelo-teatro with fade
 
-    # Parte 4 - Henry e Basil, junto de Dorian vão ver Sibyl Vane atuando como Julieta, mas acabam se desepicionando.
+    # Parte 4 - Henry e Basil, junto de Dorian vão ver Sibyl Vane atuando como Julieta, mas acabam se decepcionando.
 
     henry "Hmm... Que lugar estranho para se encontrar uma deusa."
 
@@ -463,7 +389,7 @@ label capitulo_2:
     pause(0.8)
     scene dorian-entrando-camarim with fade
 
-# Parte 5 (Final) - Dorian vai atrás de Sibyl perdindo explicações.
+    # Parte 5 (Final) - Dorian vai atrás de Sibyl pedindo explicações.
 
     # Variável de que contabiliza o quanto dorian está copreendendo Sibyl. 
     # Ela é responsável por alterar o final!
@@ -582,6 +508,8 @@ label capitulo_2:
 
 
 label final_sibyl_termino:
+
+    $ estado_retrato += 1
 
     menu:
         "VOCÊ MATOU O MEU AMOR!":

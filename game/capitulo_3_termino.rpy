@@ -1,104 +1,7 @@
-# Capítulo 2 - Familia Campbell
-
-# Efeito de bounce para os personagens quando falarem.
-transform bounce:
-    yoffset 0
-    easein .175 yoffset -10
-    easeout .175 yoffset 0
-    # repeat 1
-
-# Programação do bounce para os personagens.
-init python:
-
-    def dorian_bounce(event, interact=True, **kwargs):
-
-        if event == "show":
-
-            if renpy.showing("dorian-neutro"):
-
-                renpy.show(
-                    "dorian-neutro",
-                    at_list=[bounce]
-                )
-
-
-    def basil_bounce(event, interact=True, **kwargs):
-
-        if event == "show":
-
-            if renpy.showing("basil-neutro"):
-
-                renpy.show(
-                    "basil-neutro",
-                    at_list=[bounce]
-                )
-
-
-    def henry_bounce(event, interact=True, **kwargs):
-
-        if event == "show":
-
-            if renpy.showing("henry-neutro"):
-
-                renpy.show(
-                    "henry-neutro",
-                    at_list=[bounce]
-                )
-    
-    def alan_bounce(event, interact=True, **kwargs):
-
-        if event == "show":
-
-            if renpy.showing("alan-neutro"):
-
-                renpy.show(
-                    "alan-neutro",
-                    at_list=[bounce]
-                )
-    
-    def elizabeth_bounce(event, interact=True, **kwargs):
-
-        if event == "show":
-
-            if renpy.showing("elizabeth-neutro"):
-
-                renpy.show(
-                    "elizabeth-neutro",
-                    at_list=[bounce]
-                )
-    
-    def gladys_bounce(event, interact=True, **kwargs):
-
-        if event == "show":
-
-            if renpy.showing("gladys-neutro"):
-
-                renpy.show(
-                    "gladys-neutro",
-                    at_list=[bounce]
-                )
-
-
-# Inverte a posição horizontal para esquerda, para que o personagem olhe para o outro.
-transform position_left:
-    xzoom 1.0
-
-# Inverte a posição horizontal para direita, para que o personagem olhe para o outro.
-transform position_right:
-    xzoom -1.0
-
-# Definições dos personagens (caso ainda não estejam definidas)
-define narrador = Character("Narrador", color="#AAAAAA")
-define dorian = Character("Dorian Gray", color="#E8D845", callback=dorian_bounce)
-define basil = Character("Basil Hallward", color="#C0C839", callback=basil_bounce)
-define henry = Character("Henry Wotton", color="#ED6101", callback=henry_bounce)
-define alan = Character("Alan Campbell", color="#6C472A", callback=alan_bounce)
-define elizabeth = Character("Elizabeth Campbell", color="#FAF2DE", callback=elizabeth_bounce)
-define gladys = Character("Gladys Campbell", color="#9B59B6", callback=gladys_bounce)
-define mordomo = Character("Mordomo", color="#888888")
-
 # Capítulo 3: Família Campbell
 label capitulo_3_termino:
+
+    $ influencia_campbell = 0
 
     scene capitulo3-transicao with fade
     pause
@@ -107,22 +10,22 @@ label capitulo_3_termino:
     "Um mês havia se passado desde aquela noite no teatro."
 
     # Parte 1 - Basil e Dorian conversando antes da viagem de Basil para Paris.
+
     scene dorian-pensativo-em-sua-casa with fade
 
-    dorian "\"Lorde Henry disse que a juventude deve buscar novas sensações… Que não devo desperdiçar meus dias com arrependimentos... Será que... Sibyl era de fato um fracasso? ...\""
+    dorian "\"Lorde Henry disse que a juventude deve buscar novas sensações… Que a beleza abre portas que a virtude jamais conseguiria tocar...\""
+    dorian "\"Mas Basil sempre fala como se houvesse perigo nisso.\""
 
     scene dorian-assustado with dissolve
     pause(0.8)
     scene porta-dorian with dissolve
 
     dorian "\"Batidas na porta de minha casa neste horário?\""
-
     dorian "Quem é?"
 
-    basil "Sou eu, Dorian, Basil."
+    basil "Sou eu, Dorian. Basil."
 
     scene casa-dorian with fade
-    
     show basil-neutro at right, position_left with dissolve
 
     basil "Boa noite, Dorian. Perdoe-me por vir tão tarde. Eu precisava vê-lo antes de partir."
@@ -131,27 +34,41 @@ label capitulo_3_termino:
 
     dorian "Partir?"
 
-    basil "Sim. Amanhã pela manhã viajarei para Paris. Ficarei fora por três meses. Há encomendas, galerias e pessoas insistentes demais para serem ignoradas. Mas confesso que essa viagem também me servirá como descanso."
+    basil "Sim. Amanhã pela manhã viajarei para Paris. Ficarei fora por três meses. Há encomendas, galerias e pessoas insistentes demais para serem ignoradas."
 
-    dorian "Três meses é muito tempo, Basil."
+    basil "Mas confesso que essa viagem também me servirá como descanso. Por isso vim vê-lo. Não queria partir sem antes conversar com você."
 
-    basil "É. Por isso vim vê-lo. Não queria partir sem antes conversar com você."
-    basil "Dorian, desde que conheceu Henry, algo em você parece inquieto. Não digo isso por ciúmes ou por capricho. Henry é meu amigo, mas conheço bem o perigo das palavras dele. Ele tem o talento terrível de fazer uma ideia ruim parecer bela, e uma escolha cruel parecer apenas coragem."
+    basil "Dorian, desde que conheceu Henry, algo em você parece inquieto. Ele tem o talento terrível de fazer uma ideia ruim parecer bela, e uma escolha cruel parecer apenas coragem."
 
     dorian "Basil, você exagera."
 
-    basil "Talvez. Mas prefiro exagerar por cuidado a me calar por covardia. Tome cuidado com Henry enquanto eu estiver fora. Ele não obriga ninguém a cair, mas sabe muito bem como abrir uma janela e elogiar a vista."
+    basil "Talvez. Mas prefiro exagerar por cuidado a me calar por covardia."
 
-    dorian "Você fala como se ele fosse meu inimigo."
+    basil "Tome cuidado com Henry enquanto eu estiver fora. Ele não obriga ninguém a cair, mas sabe muito bem como abrir uma janela e elogiar a vista."
 
-    basil "Não. Falo como se ele fosse uma influência. E você ainda é jovem demais para perceber quando uma influência começa a falar com a sua própria voz. Enquanto eu estiver fora, promete que não deixará Henry convencê-lo de que a beleza é a única coisa que vale a pena na vida?"
+    basil "Enquanto eu estiver fora, promete que não deixará Henry convencê-lo de que a beleza é a única coisa que vale a pena na vida?"
 
-    dorian "Prometo, Basil. Não vou deixar Henry me convencer disso."
+    menu:
+        "Prometer com firmeza.":
+            $ influencia_campbell += 1
+            dorian "Prometo, Basil. Não vou deixar Henry me convencer disso."
 
-    basil "Ótimo. Confio em você, Dorian."
+            basil "Ótimo. Confio em você, Dorian."
+
+        "Responder com dúvida.":
+            dorian "Prometo tentar, Basil."
+
+            basil "Tentar já é melhor do que se entregar. Mas tome cuidado: as ideias de Henry parecem leves justamente porque são perigosas."
+
+        "Acalmar Basil.":
+            $ influencia_campbell -= 1
+            dorian "Não se preocupe tanto comigo, Basil."
+
+            basil "Preocupo-me porque sou seu amigo. E amigos servem para dizer aquilo que os aduladores evitam."
 
     basil "Lembre-se: beleza é um dom, não uma desculpa. Se um dia começar a acreditar que sua aparência o coloca acima dos outros, então Henry terá vencido sem precisar dizer mais nada."
-    basil "Amanhã meu trem parte cedo, as 8 da manhã. Gostaria que fosse à estação se despedir de mim."
+
+    basil "Amanhã meu trem parte cedo, às oito da manhã. Gostaria que fosse à estação se despedir de mim."
 
     dorian "Irei."
 
@@ -190,15 +107,9 @@ label capitulo_3_termino:
 
     henry "Sem dúvida. Esse é justamente o defeito dele. Pessoas muito boas desejam salvar o mundo inteiro e, quando não conseguem, começam a salvar os amigos por falta de opção."
 
-    henry "Mas me diga, Dorian, que conversa tão grave foi essa? Basil falou meu nome com aquele tom de quem anuncia uma doença?"
+    henry "Mas me diga, Dorian, que conversa tão grave foi essa?"
 
-    dorian "Ele me disse para tomar cuidado com o senhor."
-
-    henry "Naturalmente. Basil nasceu preocupado. Se o mundo acabasse, ele choraria e pediria desculpas pelas rachaduras no céu."
-
-    henry "Ele teme minhas palavras porque sabe que palavras são perigosas. Não por serem falsas, mas por dizerem em voz alta aquilo que as pessoas preferem esconder."
-
-    dorian "Ele também pediu que eu não deixasse o senhor me convencer de que a beleza é a única coisa que vale a pena na vida."
+    dorian "Ele pediu que eu não deixasse o senhor me convencer de que a beleza é a única coisa que vale a pena na vida."
 
     henry "Ah! Então Basil está mais dramático do que imaginei."
 
@@ -206,9 +117,23 @@ label capitulo_3_termino:
 
     henry "A bondade precisa explicar-se. A inteligência precisa provar-se. A virtude precisa ser defendida como uma causa perdida. A beleza, porém, entra em uma sala e todos compreendem imediatamente."
 
-    dorian "Isso parece injusto."
+    menu:
+        "Isso parece injusto.":
+            dorian "Isso parece injusto."
 
-    henry "A vida é injusta, Dorian. Alguns sofrem por isso. Outros aprendem a usar a injustiça com elegância."
+            henry "A vida é injusta, Dorian. Alguns sofrem por isso. Outros aprendem a usar a injustiça com elegância."
+
+        "Basil discordaria disso.":
+            $ influencia_campbell += 1
+            dorian "Basil discordaria disso."
+
+            henry "Naturalmente. Basil discorda de tudo que torna a vida menos tediosa."
+
+        "Talvez haja verdade nisso.":
+            $ influencia_campbell -= 1
+            dorian "Talvez haja alguma verdade nisso."
+
+            henry "Há mais verdade nisso do que a sociedade teria coragem de confessar."
 
     henry "Lembra-se do que lhe disse no jardim de Basil? Busque novas sensações. Não desperdice sua juventude tentando provar que pode ser prudente."
 
@@ -247,27 +172,30 @@ label capitulo_3_termino:
 
     henry "Não precisa prometer. Sei que comparecerá."
 
-    # Parte 3 - jantar na casa da família Campbell.
+    # Parte 3 - Jantar na casa da família Campbell.
 
     scene na-noite-daquele-mesmo-dia with fade
     pause
+
     scene dorian-defronte-casa-campbell with fade
     pause(1.4)
+
     scene dorian-batendo-na-porta-da-casa-campbell with dissolve
 
     mordomo "Quem é?"
 
-    dorian "É o Dorian Gray, o convidado que Lorde Henry Wotton mencionou."
+    dorian "É Dorian Gray, o convidado que Lorde Henry Wotton mencionou."
 
     scene alan-dorian-cumprimentando with dissolve
     pause(0.8)
 
-    alan "Boa noite, Dorian. Finalmente chegou, o jantar começou já faz um tempinho. Por favor, sente-se."
+    alan "Boa noite, Dorian. Finalmente chegou. O jantar começou já faz um tempinho. Por favor, sente-se."
     
-    dorian "Ops... Desculpe o atraso. Hehehe..."
+    dorian "Desculpe o atraso."
 
     scene henry-eliza-alan-dorian-jantando with dissolve
     pause(1.0)
+
     scene mesa-jantar-campbell with fade
     show alan-neutro at right, position_left with dissolve
 
@@ -303,19 +231,29 @@ label capitulo_3_termino:
 
     alan "Diga-me, senhor Gray. Basil Hallward o pintou como se a beleza fosse sagrada. Henry fala do senhor como se a juventude fosse um reino. E o senhor? Já percebeu o poder que possui?"
 
-    dorian "Não sei se penso nela dessa forma."
+    menu:
+        "Ainda não pensei nisso.":
+            dorian "Não sei se penso nela dessa forma."
 
-    alan "Então deveria começar."
+            alan "Então deveria começar."
 
-    alan "A beleza é a primeira autoridade que o mundo reconhece. Antes que um homem prove inteligência, caráter ou fortuna, sua aparência já foi julgada."
+        "Talvez seja apenas aparência.":
+            $ influencia_campbell += 1
+            dorian "Talvez seja apenas aparência."
 
-    alan "Os feios precisam argumentar. Os comuns precisam insistir. Os belos apenas entram."
+            alan "Nada que move o mundo é apenas alguma coisa."
+
+        "Basil diria que é um dom.":
+            $ influencia_campbell += 1
+            dorian "Basil diria que é um dom, não um poder."
+
+            alan "Basil é artista. Artistas adoram tornar perigos inofensivos dando a eles nomes bonitos."
+
+    alan "A beleza é a primeira autoridade que o mundo reconhece. Os feios precisam argumentar. Os comuns precisam insistir. Os belos apenas entram."
 
     henry "Uma frase terrível, Alan. Portanto, provavelmente verdadeira."
 
     alan "A beleza abre portas que a bondade passa anos batendo. A juventude recebe perdões que a velhice jamais conseguiria comprar."
-
-    alan "Por isso considero humildade, em pessoas belas, quase uma ingratidão à natureza."
 
     hide dorian-neutro with dissolve
     show elizabeth-neutra at left, position_right with dissolve
@@ -335,13 +273,26 @@ label capitulo_3_termino:
 
     alan "Exatamente. O jovem belo que se comporta como todos os outros desperdiça uma vantagem rara. A natureza foi parcial com ele. Por que fingir igualdade?"
 
-    dorian "Talvez juventude, beleza e bondade possam existir juntas."
+    menu:
+        "Juventude e bondade podem existir juntas.":
+            $ influencia_campbell += 1
+            dorian "Talvez juventude, beleza e bondade possam existir juntas."
 
-    alan "Uma resposta bonita. Não sei se verdadeira, mas bonita."
+            alan "Uma resposta bonita. Não sei se verdadeira, mas bonita."
 
-    alan "Mas permita-me uma correção: bondade só é admirada quando não atrapalha o prazer de ninguém. A beleza é admirada mesmo quando incomoda."
+        "Talvez Basil tenha razão.":
+            $ influencia_campbell += 1
+            dorian "Talvez Basil tenha razão em temer esse tipo de pensamento."
 
-    alan "É por isso que ela é superior."
+            henry "Pobre Basil. Sempre ausente e ainda assim sempre interrompendo."
+
+        "Talvez a beleza seja mesmo superior.":
+            $ influencia_campbell -= 2
+            dorian "Talvez a beleza seja mesmo superior."
+
+            alan "Finalmente uma frase menos tímida."
+
+    alan "Bondade só é admirada quando não atrapalha o prazer de ninguém. A beleza é admirada mesmo quando incomoda. É por isso que ela é superior."
 
     hide dorian-neutro with dissolve
     show elizabeth-neutra at center, position_left with dissolve
@@ -369,219 +320,167 @@ label capitulo_3_termino:
     scene henry-eliza-alan-dorian-jantando-2 with dissolve
     pause(0.8)
 
-    "A noite seguiu entre ironias, risos e comentários afiados. Alan defendia a beleza como poder. Elizabeth lembrava que poder sem consciência era perigoso. Henry se divertia. Dorian ouvia tudo em silêncio, como se tentasse decidir qual daquelas vozes permaneceria em sua mente."
-
-    "A noite seguiu entre ironias, risos e comentários afiados. Alan parecia sempre procurar a parte mais frágil de uma ideia para quebrá-la em público. Henry se divertia. Elizabeth corrigia os excessos com elegância. Dorian ouvia tudo com atenção e respondia com frases curtas, como se ainda tentasse decidir qual daquelas vozes permaneceria em sua mente."
+    "A noite seguiu entre ironias, risos e comentários afiados. Alan defendia a beleza como poder. Elizabeth lembrava que poder sem consciência era perigoso. Henry se divertia. Dorian ouvia tudo em silêncio."
 
     scene dorian-se-despedindo-do-jantar with fade
 
-    alan "Já está de saida, senhor Gray? Não gostou da nossa companhia? Daqui a pouco o chá será servido, é a melhor parte da noite."
+    alan "Já está de saída, senhor Gray? Não gostou da nossa companhia? Daqui a pouco o chá será servido."
 
-    dorian "Eu gostei muito, mas é que tenho que ir para resolver uns assuntos..."
+    dorian "Gostei muito, mas preciso ir."
 
-    alan "Hmmm... Normalmente, eu associaria isso a uma desculpa enfarrapada qualquer, mas como gostei do senhor, vou considerar uma execessão. Espero que não seja nada urgente. O senhor está convidado para o campo de golfe no domingo, caso queira ir."
+    alan "Normalmente, eu associaria isso a uma desculpa qualquer. Mas, como gostei do senhor, aceitarei como exceção."
 
-    dorian "Se Henry for, eu certamen..."
-
-    gladys "Papai, mamãe pediu que eu avisasse que o chá será servido na sala menor. Ohh! Perdoem-me. Não sabia que ainda conversavam."
+    gladys "Papai, mamãe pediu que eu avisasse que o chá será servido na sala menor. Oh! Perdoem-me. Não sabia que ainda conversavam."
 
     alan "Sem problemas, querida. Gladys, este é o senhor Dorian Gray. Dorian, minha filha mais velha, Gladys Campbell."
 
-    dorian "É um prazer te conhecer, senhorita Gladys."
+    dorian "É um prazer conhecê-la, senhorita Gladys."
 
     gladys "Digo o mesmo, senhor Gray."
 
-    alan "Eu até gostaria que vocês se conhecessem mais, porém, Dorian, já está de saída."
+    alan "Eu até gostaria que conversassem mais, porém Dorian já está de saída."
 
-    gladys "Ahhh! Então deixe-me acompanhá-lo até a saída."
+    gladys "Então deixe-me acompanhá-lo até a porta."
 
-    dorian "Serian uma honra."
+    # Parte 4 - Gladys conversa com Dorian no jardim próximo à igreja de Saint Mark.
 
-    gladys "Obrigada por sua presença, senhor Gray. Espero que meu pai não tenha tornado a noite desagradável."
+    scene casa-dorian with fade
 
-    dorian "Não. Ele apenas fala de forma… intensa."
+    "Nas semanas seguintes, Dorian continuou frequentando a casa da família Campbell. Entre jantares, conversas e provocações de Lorde Henry, começou a notar que Gladys observava tudo com uma sinceridade rara."
 
-    gladys "Essa é uma maneira gentil de dizer terrível. Papai se orgulha de ser desagradável, porque acredita que delicadeza é uma forma de mentira. Eu discordo. Às vezes, delicadeza é apenas a verdade sem desejo de ferir."
+    scene jardim-basil with fade
+    show gladys-neutro at left, position_right with dissolve
+    show dorian-neutro at right, position_right with dissolve
 
-    dorian "A senhorita fala de modo muito diferente dele."
+    gladys "Obrigada por ter vindo, senhor Gray. Queria conversar longe da casa dos Campbell."
 
-    gladys "Tento falar como eu mesma. É difícil em uma casa cheia de pessoas inteligentes. Pessoas inteligentes costumam usar palavras como espadas e depois chamam os ferimentos de conversa."
+    gladys "Lá, toda conversa vira uma disputa entre a crueldade elegante de meu pai e as ironias de Lorde Henry."
 
-    dorian "Foi bom ouvi-la esta noite."
+    gladys "Ontem percebi que o senhor escutava os dois com atenção. Isso me preocupou. Homens como eles sabem transformar vaidade em filosofia e perigo em liberdade."
 
-    gladys "Digo o mesmo. Venha para o campo de golfe no domingo. Papai convidou Lorde Henry, e imagino que Lorde Henry convidará o senhor sem pedir licença. Assim, poderemos conversar mais. O senhor parece ser um homem interessante, e eu adoraria conhecê-lo melhor."
+    menu:
+        "A senhorita fala como Basil.":
+            $ influencia_campbell += 1
+            dorian "A senhorita fala como Basil."
 
-    dorian "A senhorita também estará lá?"
+            gladys "Então Basil deve ser uma boa influência."
 
-    gladys "Estarei sim. Caso contrário, eu não teria mencionado."
+        "Eles apenas dizem o que pensam.":
+            $ influencia_campbell -= 1
+            dorian "Eles apenas dizem o que pensam."
 
-    dorian "Então irei."
+            gladys "Talvez. Mas algumas pessoas pensam com tanta elegância que esquecemos de perguntar se estão certas."
 
-    gladys "Boa noite, senhor Gray."
+        "Não sei em quem acreditar.":
+            dorian "Não sei em quem acreditar."
 
-    dorian "Boa noite, senhorita Campbell."
+            gladys "Então comece desconfiando de quem elogia demais aquilo que o senhor já deseja ouvir."
 
-    # Parte 4 - Campo de golfe e Passeio com Gladys.
-    henry "Dorian, lembre-se: no golfe, como na vida, o importante não é acertar, mas parecer superior ao erro."
+    gladys "Guarde amigos que o deixam desconfortável de vez em quando. Eles nos lembram de quem somos quando estamos ocupados tentando parecer outra coisa."
 
-    alan "Henry joga mal há anos e transformou isso em filosofia."
+    gladys "Meu pai acredita que beleza está acima da bondade. Lorde Henry talvez não diga isso tão diretamente, mas sorri quando alguém acredita."
 
-    henry "Exatamente. A filosofia existe para tornar nossos defeitos mais suportáveis aos outros. Hahaha!"
-
-    gladys "Papai diz que o golfe melhora o caráter. Curiosamente, nunca melhorou o dele."
-
-    alan "Gladys, expor verdades familiares diante de convidados é uma violência social."
-
-    gladys "Então considere minha sinceridade uma herança sua."
-    gladys "Senhor Gray, deseja caminhar um pouco? Os homens parecem ocupados demais tentando vencer uns aos outros com paus e silêncio."
-
-    dorian "Será um prazer."
-
-    gladys "O senhor parece menos perdido hoje do que ontem."
-
-    dorian "Eu parecia perdido?"
-
-    gladys "Um pouco. Como alguém que entrou em uma sala elegante procurando uma saída, não uma conversa."
-
-    gladys "Lorde Henry oferece muitas saídas, mas quase todas levam para dentro dele mesmo. Papai é pior: ele oferece portas de ferro e chama isso de verdade."
-
-    gladys "O senhor deveria tomar cuidado com homens que explicam demais a vida. Geralmente fazem isso para não precisar senti-la."
-
-    dorian "A senhorita fala como o meu amigo, Basil."
-
-    gladys "Então Basil deve ser alguém sensato. Conserve-o."
-
-    gladys "Bons amigos são raros porque não nos deixam confortáveis o tempo todo. Eles nos lembram de quem somos quando estamos ocupados tentando parecer outra coisa."
-
-    gladys "Meu pai e Lorde Henry são homens brilhantes, não nego. Mas há um perigo em homens brilhantes: eles fazem qualquer abismo parecer uma escada."
-
-    dorian "Talvez eu precise ouvir mais pessoas como você e Basil."
-
-    gladys "Talvez. Mas não me coloque ao lado de seu melhor amigo tão rápido. Ainda estou decidindo se o senhor merece bons conselhos."
-
-    gladys "Comece não tratando tudo como um jogo. Nem toda conversa precisa ser vencida, nem toda beleza precisa ser admirada como se fosse um objeto."
-
-    gladys "E nem toda escolha perigosa se torna menos perigosa apenas porque foi dita com elegância."
-
-    dorian "A senhorita é sempre tão direta?"
-
-    gladys "Apenas quando acho que vale o esforço."
-
-    gladys "Há um jardim próximo à igreja de Saint Mark. É tranquilo à noite, e distante o bastante dos salões para que as pessoas parem de representar por alguns minutos."
-
-    gladys "Apareça lá amanhã à noite, senhor Gray. Quero saber se o senhor consegue conversar sem Lorde Henry falando por cima de seus pensamentos."
-
-    dorian "A senhorita está me convidando?"
-
-    gladys "Estou oferecendo uma oportunidade. Convite é uma palavra muito confortável."
-    gladys "Se for, conversaremos. Se não for, entenderei que prefere permanecer entre os homens que transformam vaidade em filosofia."
-
-    dorian "Eu irei."
-
-    gladys "Ótimo. Então nos veremos amanhã à noite."
-    dorian "Sim, senhorita Campbell. Nos veremos lá."
-
-    gladys "Espero que sim, senhor Gray."
-
-    # Parte 5 - Encontro no Jardim próximo à igreja de Saint Mark.
-
-    gladys "Obrigada por ter vindo, senhor Gray. Queria conversar longe da casa dos Campbell. Lá, toda conversa vira uma disputa entre a crueldade elegante de meu pai e as ironias de Lorde Henry."
-    gladys "Ontem, percebi que o senhor escutava os dois com atenção. Isso me preocupou. Homens como eles sabem transformar vaidade em filosofia e perigo em liberdade."
-
-    dorian "A senhorita fala como Basil."
-
-    gladys "Então Basil deve ser uma boa influência. Guarde amigos assim. Eles nos lembram de quem somos quando estamos ocupados tentando parecer outra coisa."
-    gladys "Meu pai acredita que beleza está acima da bondade. Lorde Henry talvez não diga isso tão diretamente, mas sorri quando alguém acredita. Eu penso diferente. A beleza abre portas, sim. Mas não ensina ninguém a permanecer nelas com dignidade."
+    gladys "Eu penso diferente. A beleza abre portas, sim. Mas não ensina ninguém a permanecer nelas com dignidade."
 
     dorian "E o que ensina?"
 
-    gladys "Caráter. Honestidade. Consciência. Coisas menos brilhantes, mas mais necessárias. O senhor é belo, Dorian. Todos percebem isso antes mesmo que fale. Mas tome cuidado para não transformar esse dom em desculpa."
+    gladys "Caráter. Honestidade. Consciência. Coisas menos brilhantes, mas mais necessárias."
 
-    dorian "Tentarei lembrar disso."
+    gladys "O senhor é belo, Dorian. Todos percebem isso antes mesmo que fale. Mas tome cuidado para não transformar esse dom em desculpa."
 
-    gladys "Tente praticar, não apenas lembrar. A beleza é um presente, não uma desculpa. Se um dia começar a acreditar que sua aparência o coloca acima dos outros, então Lorde Henry e meu pai terão vencido sem precisar dizer mais nada."
+    menu:
+        "Tentarei lembrar disso.":
+            $ influencia_campbell += 1
+            dorian "Tentarei lembrar disso."
+
+            gladys "Tente praticar, não apenas lembrar."
+
+        "Isso parece difícil.":
+            dorian "Isso parece difícil."
+
+            gladys "É difícil. Por isso tantos preferem discursos bonitos a escolhas corretas."
+
+        "Talvez beleza seja uma desculpa inevitável.":
+            $ influencia_campbell -= 2
+            dorian "Talvez beleza seja uma desculpa inevitável."
+
+            gladys "Não, senhor Gray. Essa é justamente a mentira que homens como meu pai e Lorde Henry esperam que o senhor aceite."
+
+    gladys "A beleza é um presente, não uma desculpa. Se um dia começar a acreditar que sua aparência o coloca acima dos outros, então Lorde Henry e meu pai terão vencido sem precisar dizer mais nada."
+
     gladys "Você vai continuar visitando nossa casa?"
 
-    dorian "Sim. Acredito que ainda tenho algo a aprender lá."
+    menu:
+        "Sim, ainda quero aprender com você.":
+            $ influencia_campbell += 1
+            dorian "Sim. Ainda quero aprender com você."
 
-    gladys "Então venha. Mas venha com os olhos abertos. Verá meu pai transformar sentimentos em fraqueza, Lorde Henry transformar vaidade em filosofia e minha mãe tentando manter alguma humanidade naquela mesa."
+            gladys "Então venha com os olhos abertos."
+
+        "Sim, Alan e Henry são fascinantes.":
+            $ influencia_campbell -= 2
+            dorian "Sim. Alan e Lorde Henry são fascinantes."
+
+            gladys "Fascinantes, sim. Mas também perigosos. O brilho deles pode cegar mais do que iluminar."
+
+        "Sim, ainda tenho algo a compreender.":
+            dorian "Sim. Acredito que ainda tenho algo a aprender lá."
+
+            gladys "Então venha com os olhos abertos."
+
+    gladys "Verá meu pai transformar sentimentos em fraqueza, Lorde Henry transformar vaidade em filosofia e minha mãe tentando manter alguma humanidade naquela mesa."
+
     gladys "E talvez também me veja, se quiser ouvir alguém que não pretende elogiá-lo, apenas adverti-lo."
 
     dorian "Eu quero ouvir."
 
     gladys "Ótimo. Então talvez possamos ser amigos, senhor Gray."
-    
+
     dorian "Eu gostaria disso."
-    
+
     gladys "Eu também. Mas não espere elogios fáceis. Já existem pessoas demais elogiando sua beleza."
 
-    "Naquela noite, Dorian apenas caminhou ao lado de Gladys e ouviu. Pela primeira vez em muito tempo, não sentiu necessidade de transformar o silêncio em pose."
+    "Naquela noite, Dorian apenas caminhou ao lado de Gladys e ouviu."
+
+    if influencia_campbell >= 2:
+        jump final_cap3_bom
+    else:
+        jump final_cap3_ruim
+
+
+label final_cap3_bom:
+
     "Depois disso, Dorian continuou frequentando a casa da família Campbell durante dois meses. Dizia a si mesmo que voltava pelos jantares e conversas, mas sabia que as palavras de Gladys permaneciam em sua mente."
 
-    # Parte 6 - Jantar na casa dos Campbell, 2 meses depois.
+    # Parte 5 - Dorian e Basil se reencontrando depois de três meses, quando Basil retorna de Paris.
 
-    elizabeth "senhor Henry, você mal tocou no meu lindo jantar. Acredito que esteja apaixonado."
+    scene casa-dorian with fade
+    show basil-neutro at right, position_left with dissolve
+    show dorian-neutro at left, position_left with dissolve
 
-    henry "Não me apaixono desde que mandame Febe deixou a cidade."
-
-    elizabeth "Mandame Febe? Não conheço."
-
-    henry "É uma mulher maravilhoso, Lady. Quando seu marido morreu, seu cabelo ficou dourado de dor."
-
-    elizabeth "Como era marido dela?"
-
-    henry "Marido de mulheres bonitas pertece a classe dos criminosos."
-
-    elizabeth "Não me espante que o mundo diga que é extremamente cruel."
-
-    henry "É monstruosa a maneira como as pessoas hojes em dias sai dizendo coisas que são inteiras e absolutamente verdadeiras. As mulheres nos amam por nossos defeitos, e se tivemos muitos tudo nos perdoará."
-
-    alan "É verdade."
-
-    elizabeth "Ninguém jamais me convencerá de que o senhor Gray é mau, e jamais o perdoarei se continuar solteiro. Não acha que devemos arrumar uma esposa para o senhor Gray, Lorde Henry?"
-
-    henry "Talvez sim, talvez não. Isso só depende de Dorian. Mas o meu palpite é sim, minha senhora, sou obrigado a concordar. Dorian ainda não usufruiu dessa experiência. Qualquer coisa, é só terminar o relacionamento, e ele pode voltar a ser livre. Não há problema nenhum nisso."
-
-    alan "Cuidado, Dorian. Quando minha esposa decide casar alguém, até a ciência se retira em silêncio.Hahaha!"
-
-    elizabeth "Farei uma lista com todas as jovens disponíveis, suas idades, famílias e virtudes."
-
-    dorian "Eu lhe pouparei o trabalho de procurar, lady Elizabeth. Eu já escolhi, se ela me aceitar."
-
-    henry "Ora, ora."
-    
-    elizabeth "Eu não acredito."
-
-    alan "Por essa não esperava. É a maior supresa da noite. Quem é, Dorian?"
-
-    dorian "Ninguém." 
-    
-    henry "Ninguém?" 
-    
-    dorian "Ninguém. Não desejo uma esposa escolhida como se fosse parte de uma coleção elegante. Também não quero transformar o casamento em uma nova sensação, como o senhor sugeriu, Henry. Se um dia eu amar alguém, não quero que seja por beleza, posição ou curiosidade. Quero que seja porque me tornei digno de estar ao lado dessa pessoa." 
-
-    gladys "Estou orgulhosa, senhor Gray."
-
-    # Parte 7 - Dorian e Basil se reencontrando depois de três meses, quando Basil retorna de Paris.
     basil "Dorian!"
 
     dorian "Basil!"
 
     basil "Três meses em Paris, e ainda assim parece que fiquei longe por anos."
+
     basil "Confesso que tive medo de voltar e encontrar apenas a voz de Henry em você. Mas há algo diferente no seu olhar. Parece menos perdido."
 
-    dorian "Com é bom te ver, Basil. Senti sua falta. Enquanto estive fora, conheci a família Campbell."
+    dorian "Como é bom te ver, Basil. Senti sua falta. Enquanto esteve fora, conheci a família Campbell."
 
     basil "Alan Campbell?"
 
     dorian "Sim."
 
-    basil "Então Henry realmente não perdeu tempo. Alan é brilhante, mas perigoso. Ele transforma frieza em inteligência e chama isso de verdade."
+    basil "Então Henry realmente não perdeu tempo."
+
     basil "Alan é brilhante, mas perigoso. Ele transforma frieza em inteligência e chama isso de verdade."
 
     dorian "Gladys me fez perceber isso."
 
-    basil "Gladys Campbell? Então ainda há esperança naquela casa. Se ela fez você duvidar das certezas de Henry e Alan, já a considero uma boa influência."
+    basil "Gladys Campbell? Então ainda há esperança naquela casa."
+
+    basil "Se ela fez você duvidar das certezas de Henry e Alan, já a considero uma boa influência."
 
     dorian "Ela é."
 
@@ -589,9 +488,91 @@ label capitulo_3_termino:
 
     dorian "Certo. Amanhã irei até sua casa para conversarmos melhor."
 
-    basil "Fique a vontade para ir quando quiser. Mas antes de sair, Dorian, preciso lhe dizer algo. Dorian, independente do que você se transforme, continuarei sendo seu amigo."
+    basil "Fique à vontade para ir quando quiser."
+
+    basil "Mas antes de sair, Dorian, preciso lhe dizer algo."
+
+    basil "Independente do que você se transforme, continuarei sendo seu amigo."
 
     dorian "..."
+
+    dorian "Digo o mesmo, Basil."
+
+    basil "Então até amanhã, meu amigo."
+
+    dorian "Até amanhã."
+
+    return
+
+
+label final_cap3_ruim:
+
+    $ estado_retrato += 1
+
+    "Depois disso, Dorian continuou frequentando a casa da família Campbell durante dois meses. Dizia a si mesmo que voltava para compreender melhor aquele mundo, mas pouco a pouco passou a admirar justamente aquilo que Gladys tentava advertir."
+
+    "As palavras de Alan e Lorde Henry permaneceram em sua mente com mais força do que as de Gladys. A beleza começava a parecer menos um dom e mais uma permissão."
+
+    scene casa-dorian with fade
+    show basil-neutro at right, position_left with dissolve
+    show dorian-neutro at left, position_left with dissolve
+
+    basil "Dorian!"
+
+    dorian "Basil!"
+
+    basil "Três meses em Paris, e ainda assim parece que fiquei longe por anos."
+
+    basil "Confesso que tive medo de voltar e encontrar apenas a voz de Henry em você."
+
+    basil "E agora... não sei se esse medo era exagero."
+
+    dorian "Como é bom te ver, Basil. Enquanto esteve fora, conheci a família Campbell."
+
+    basil "Alan Campbell?"
+
+    dorian "Sim."
+
+    basil "Então Henry realmente não perdeu tempo."
+
+    basil "Alan é brilhante, mas perigoso. Ele transforma frieza em inteligência e chama isso de verdade."
+
+    dorian "Talvez ele apenas enxergue o mundo sem ilusões."
+
+    basil "Essa é exatamente a frase que eu temia ouvir."
+
+    dorian "Gladys também tentou me advertir."
+
+    basil "Tentou?"
+
+    dorian "Sim. Mas talvez ela seja parecida demais com você."
+
+    basil "E isso se tornou um defeito?"
+
+    dorian "Não um defeito. Apenas... uma forma de ver o mundo que talvez não seja a minha."
+
+    basil "Dorian..."
+
+    basil "A beleza é um dom, mas também é uma armadilha. Se começar a acreditar que sua aparência o coloca acima dos outros, então já terá começado a se perder."
+
+    dorian "Talvez eu só esteja começando a entender o que possuo."
+
+    basil "Então talvez eu tenha voltado tarde demais."
+
+    dorian "Não diga isso."
+
+    basil "Já estou de saída, Dorian. Preciso ir para casa descansar. Ainda estou cansado do trabalho em Paris e da viagem de volta."
+
+    dorian "Certo. Amanhã irei até sua casa para conversarmos melhor."
+
+    basil "Vá quando quiser."
+
+    basil "Mas antes de sair, preciso lhe dizer algo."
+
+    basil "Independente do que você se transforme, continuarei sendo seu amigo."
+
+    dorian "..."
+
     dorian "Digo o mesmo, Basil."
 
     basil "Então até amanhã, meu amigo."

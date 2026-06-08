@@ -1,71 +1,7 @@
 ﻿#Capítulo 1 - O Retrato
-
-# Efeito de bounce para os personagens quando falarem.
-transform bounce:
-    yoffset 0
-    easein .175 yoffset -10
-    easeout .175 yoffset 0
-    repeat 1
-
-# Programação do bounce para os personagens.
-init python:
-
-    def dorian_bounce(event, interact=True, **kwargs):
-
-        if event == "show":
-
-            if renpy.showing("dorian-neutro"):
-
-                renpy.show(
-                    "dorian-neutro",
-                    at_list=[bounce]
-                )
-
-
-    def basil_bounce(event, interact=True, **kwargs):
-
-        if event == "show":
-
-            if renpy.showing("basil-neutro"):
-
-                renpy.show(
-                    "basil-neutro",
-                    at_list=[bounce]
-                )
-
-
-    def henry_bounce(event, interact=True, **kwargs):
-
-        if event == "show":
-
-            if renpy.showing("henry-neutro"):
-
-                renpy.show(
-                    "henry-neutro",
-                    at_list=[bounce]
-                )
-
-# Inverte a posição horizontal para esquerda, para que o personagem olhe para o outro.
-transform position_left:
-    xzoom 1.0
-
-# Inverte a posição horizontal para direita, para que o personagem olhe para o outro.
-transform position_right:
-    xzoom -1.0
-
-# Personagens
-define dorian = Character("Dorian Gray", color="#E8D845", callback=dorian_bounce)
-define basil = Character("Basil Hallward", color="#C0C839", callback=basil_bounce)
-define henry = Character("Henry Wotton", color="#ED6101", callback=henry_bounce)
-define naoRevelado = Character("???", color="#FFFFFF")
-
-# Variável que armazena a decisões ruins.
-default escolhasRuins = ""
-
-# O jogo inicia aqui.
 label capitulo_1:
 
-    #Parte 1 (Introdução) - Henry e Basil conversando sobre o quadro
+    # Parte 1 (Introdução) - Henry e Basil conversando sobre o quadro
 
     scene capitulo1-transicao with fade
     pause
@@ -167,30 +103,25 @@ label capitulo_1:
     show henry-neutro at right, position_left with dissolve
     
     menu:
-        "*Cumprimentar com educação*":
+        "Olá, Lorde Henry.":
             dorian "Olá, Lorde Henry."
 
             henry "Um prazer, senhor Gray. Basil realmente foi modesto ao descrevê-lo."
 
         "Espero não estar interrompendo.":
-            dorian "Olá, Lorde Henry. Espero não estar interrompendo."
+            dorian "Espero não estar interrompendo."
 
             henry "Pelo contrário. Interrupções belas quase sempre melhoram uma manhã."
 
     henry "Vejo que Basil realmente transmitiu a beleza de sua aparência naquele quadro de forma precisa. Pena que não será assim para sempre, não é mesmo, senhor Dorian Gray."
 
     menu:
-        "*Estranhar o comentário.*":
+        "Que coisa estranha para se dizer":
             dorian "Nossa… Humm… Que coisa estranha para se dizer a alguém que acabou de conhecer…"
 
             henry "As coisas estranhas costumam ser as únicas que merecem ser ditas."
 
-        "Responder sem saber o que dizer.":
-            dorian "Eu… Não sei como responder a isso."
-
-            henry "Excelente. As melhores conversas começam quando alguém perde a resposta."
-
-        "*Tentar não parecer afetado*":
+        "O senhor fala de um modo curioso.":
             dorian "O senhor fala de um modo curioso."
 
             henry "Curioso é apenas o nome educado que damos ao perigoso quando ele nos diverte."
@@ -237,12 +168,14 @@ label capitulo_1:
         "*Aceitar com educação*":
             dorian "Sim. Gostaria de conversar melhor com o senhor."
 
-        "*Aceitar ainda inseguro*":
+        "*Aceitar com a permissão de Basil*":
             dorian "Bem… Se Basil não se importar, eu aceito."
+
+            basil "Pode ir, Dorian."
 
     basil "Quando eu terminar eu chamo vocês. Ah… E lembre-se, Dorian: Henry é má influência, não siga os seus conselhos!"
 
-    #Parte 3 - Dorian e Henry conversando sobre a juventude, a beleza e o tempo enquanto caminha pelo jardim.
+    # Parte 3 - Dorian e Henry conversando sobre a juventude, a beleza e o tempo enquanto caminha pelo jardim.
 
     scene dorian-henry-caminhando-jardim with fade
     pause
@@ -344,7 +277,7 @@ label capitulo_1:
     hide henry-neutro with dissolve
     hide dorian-neutro with dissolve
 
-    #Parte 4 - Dorian, Henry e Basil vendo o quadro terminado e Dorian fazendo um pedido.
+    # Parte 4 - Dorian, Henry e Basil vendo o quadro terminado e Dorian fazendo um pedido.
 
     scene basil-chamando-henry-dorian with fade
 
