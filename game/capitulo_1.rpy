@@ -5,6 +5,8 @@ label capitulo_1:
 
     scene capitulo1-transicao with fade
     pause
+    scene londres-1886 with dissolve
+    pause
     scene casa-basil-frente-1 with Dissolve(2.0)
 
     "O intenso perfume de rosas impregnava o ar. A leve brisa espalhava o aroma do lilás."

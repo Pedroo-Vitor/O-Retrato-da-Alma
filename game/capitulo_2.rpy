@@ -3,47 +3,49 @@ label capitulo_2:
 
     # Parte 1 (Intro) - Dorian vai ao teatro e conhece Sibyl Vane.
 
-    scene capitulo2-transicao with fade
+    scene capitulo2-transicao with dissolve
+    pause
+    scene londres-1886 with dissolve
     pause
     scene dorian-caminhando-cidade with Dissolve(2.0)
 
     dorian "\"... Sinto que estou em perigo... Mas essa simples sensação me enche de deleite, o senhor Henry disse que a busca pela beleza é o verdadeiro segredo da vida.\""
     dorian "\"Talvez eu a encontre em algumas dessas vidas... Ao menos isso me enche de curiosidade.\""
 
-    scene dorian-olhando-placa-teatro with fade
+    scene dorian-olhando-placa-teatro with dissolve
     pause(1.5)
-    scene placa-teatro with fade
+    scene placa-teatro with dissolve
 
     dorian "\"Um teatro! Faz tanto tempo que não vou a um. O show vai começar daqui 30 minutos.\""
     dorian "\"Bem... Já que estou com bastante tempo livre...\""
     dorian "Um ingresso para a apresentação de agora!"
 
-    scene dorian-assistindo-peca with fade
+    scene dorian-assistindo-peca with dissolve
 
     dorian "\"Ora, ora... Vão apresentar Romeu e Julieta.\""
     dorian "\"Hã... O cenário é ainda mais pobre que a orquestra...\""
     dorian "\"O show já vai começar, finalmente!\""
 
-    scene peca-teatro with fade
+    scene peca-teatro with dissolve
 
     ator "Ama, e minha filha? Peça que venha."
     ator "Oh, mas eu já não pedi que viesse. Ei, Pombinha! Rainha! Santo Deus, onde está essa menina… Julieta!"
 
-    scene dorian-assistindo-peca with fade
+    scene dorian-assistindo-peca with dissolve
 
     dorian "\"Hã, que peça deprimente! acho melhor ir embora...\""
 
-    scene sibyl-interpretando-julieta-1 with fade
+    scene sibyl-interpretando-julieta-1 with dissolve
     pause(1.5)
 
     sibyl "Quem está me chamando? Estou aqui. O que deseja, senhora?"
 
-    scene dorian-assistindo-peca with fade
+    scene dorian-assistindo-peca with dissolve
     scene dorian-encantado-com-sibyl with Dissolve(1.0)
 
     dorian "\"Santo Deus! Que... Perfeição!\""
 
-    scene sibyl-interpretando-julieta-2 with fade
+    scene sibyl-interpretando-julieta-2 with dissolve
 
     dorian "\"Sua beleza me comoveu às lágrimas… E a sua voz, ora uma doce flauta, ora um áspero oboé…\""
 
@@ -51,50 +53,43 @@ label capitulo_2:
 
     dorian "\"E desde então, eu fui todos os dias.\""
 
-    scene sibyl-interpretando-imogenia with fade
+    scene sibyl-interpretando-imogenia with dissolve
 
     dorian "\"Às vezes, ela resplandece como Imogênia em 'Cymbeline'... \""
 
     sibyl "Onde está a sua cabeça? Onde? Ohh! Onde está?..."
 
-    scene sibyl-interpretando-desdemona with fade
+    scene sibyl-interpretando-desdemona with dissolve
 
     dorian "\"Outro dia, o cruel Otelo apertou seu pescoço!\""
 
     sibyl "Otelo, não me mate!"
 
-    scene dorian-assistindo-peca-feliz with fade
+    scene dorian-encantado-com-sibyl with dissolve
     pause(0.8)
-    scene desconhecido-tirando-duvida-com-dorian with fade
     
-    desconhecido "Com licença, senhor… Por acaso, é um jornalista? O senhor vem com bastante frequência."
+    dorian "Não posso ficar apenas sentando na cadeira assistindo ela, como qualquer um da plateia. Preciso conhecê-la!"
 
-    scene dorian-conversando-com-desconhecido with fade
-
-    dorian "Não, não so... QUER DIZER! SOU SIM! SOU SIM!"
-    dorian "Ahhh... Estou entrevistando os atores do para... Ehh... Escrever e publicar um artigo sobre o teatro local. Já contactei todos, só falta aquela bela moça alí."
-
-    desconhecido "Ahhh, você está falando da Sibyl Vane! Nesse caso, levarei o senhor para conhecer a atriz mais extraordinária de todos os tempos!"
-
-    dorian "Vai ser um prazer!"
-    dorian "\"Sibyl Vane, que nome lindo.\""
+    # Parte 2 - Dorian vai ao camarim de Sibyl Vane.
 
     scene sibyl-camarim with fade
     pause(0.8)
     scene dorian-e-desconhecido-entra-camarim with fade
 
-    # Parte 2 - Dorian vai ao camarim de Sibyl Vane.
+    sibyl "Pai! Não esperava o senhor aqui neste horário." 
+    
+    sibyl "Hmmm... Quem é ele?"
 
-    desconhecido "Ei, Sibyl, este jornalista quer entrevista-a, é para um artigo sobre o teatro local."
+    desconhecido "Oi, filha. Este é o lorde Dorian Gray. Ele insistiu em te conhecer."
 
-    dorian "Ehhh... Olá!"
+    dorian "Ehhh... Olá. Não sabia que ela era sua filha, senhor..."
 
     scene sibyl-chocada with dissolve
     pause(0.8)
     scene sibyl-feliz with dissolve
     pause(0.8)
 
-    sibyl "Ohh, um jornalista!? Querendo me entrevistar!? Uau, que inesperado. Vai ser um prazer. Por favor, entre!"
+    sibyl "Que inesperado! Vai ser um prazer. Por favor, entre!"
 
     scene cenario-camarim with dissolve
     show sibyl-neutra at right, position_right with dissolve
@@ -331,8 +326,7 @@ label capitulo_2:
 
     henry "Hmm... Que lugar estranho para se encontrar uma deusa."
 
-    dorian "É verdade, encontrei-a aqui, e ela é a encarnação da divindade. Essas pessoas medíocres, de rostos primitivos e gestos brutais, transformam-se quando Sibyl entra em cena."
-    dorian "Elas ficam caladas e escutam, choram e riem, exatamente como Sibyl quer que o façam. Eles sentem que foram feitos da mesma carne de nós."
+    dorian "É verdade, encontrei-a aqui, e ela é a encarnação da divindade."
 
     scene dorian-henry-basil-sentando-teatro with fade
 
@@ -350,7 +344,9 @@ label capitulo_2:
 
     dorian "É AGORA! É ELA! É AGORA! SIBYL!"
 
-    sibyl "bondoso peregrino fazeis injustiça à vossa mão"
+    sibyl "bondoso peregrino fazeis injustiça à vossa mão..."
+
+    "Diferente do que Dorian dizia, Sibyl Vane interpretava Julieta sem emoção nenhuma..."
 
     scene henry-dorian-basil-assistindo-sibyl with fade
 
@@ -368,8 +364,9 @@ label capitulo_2:
 
     scene henry-dorian-basil-assistindo-sibyl with fade
 
-    basil "Mas..."
-    henry "Basil não completou a fala, mas eu completo: simplesmente patético. Vamos embora!"
+    basil "Paté... Não sei se devo dizer isso..."
+    
+    henry "Eu falo por você, Basil: Pa-té-ti-co. Vamos embora!"
 
     scene henry-basil-saindo-do-teatro with fade
 
@@ -392,6 +389,7 @@ label capitulo_2:
     # Parte 5 (Final) - Dorian vai atrás de Sibyl pedindo explicações.
 
     # Variável de que contabiliza o quanto dorian está copreendendo Sibyl. 
+
     # Ela é responsável por alterar o final!
     $ compreensao_sibyl = 0
 
@@ -535,8 +533,8 @@ label final_sibyl_termino:
 
     sibyl "Não! Não! Não me deixe!"
 
-    # Carrega o script do capítulo 3 em que Siby Vane e Dorian terminam.
-    jump capitulo_3_termino
+    # Carrega o script do capítulo 3
+    jump capitulo_3
 
 label final_sibyl_juntos:
 
@@ -570,5 +568,5 @@ label final_sibyl_juntos:
     scene black with fade
     pause
 
-    # Carrega o script do capítulo 3 em que Siby Vane e Dorian continuam juntos.
-    jump capitulo_3_juntos
+    # Carrega o script do capítulo 3
+    jump capitulo_3
